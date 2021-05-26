@@ -12,13 +12,16 @@
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username"
-                            aria-describedby="usernameHelp" placeholder="Username">
+                            aria-describedby="usernameHelp" placeholder="Username"
+                            title="Username must be 6-14 alphanumeric characters" minlength="6" maxlength="14"
+                            pattern="^[a-zA-Z0-9]{6,14}$" required>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password"
-                                placeholder="Password">
+                                placeholder="Password" title="Password must be 6-14 alphanumeric characters"
+                                minlength="6" maxlength="14" pattern="^[a-zA-Z0-9]{6,14}$" required>
                         </div>
                     </div>
                     <div class="row">
@@ -26,7 +29,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 </div>
 
