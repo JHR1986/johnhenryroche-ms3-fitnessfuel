@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h3>Log In</h3>
+
+<div class="row">
+    <form class="col-sm-12 col-md-8" method="POST" action="{{ url_for('login') }}">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                            aria-describedby="usernameHelp" placeholder="Username" minlength="6" maxlength="14"
+                            pattern="^[a-zA-Z0-9]{6,14}$" required>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password" minlength="6" maxlength="14" pattern="^[a-zA-Z0-9]{6,14}$"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <p>
+            Haven't Registered Yet?<a href="{{ url_for('register') }}">Register Now</a>
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
