@@ -46,6 +46,7 @@ def register():
         flash("Your registration was successful!")  
     return render_template("register.html")
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -54,17 +55,17 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user)["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
             else:
-                flash("Incorrect Username and/or Password was entered")
+                flash("An incorrect Username and/or Password was entered")
                 return redirect(url_for("login"))
-                
-        else: 
-            flash("Incorrect Username and/or Password was entered")
+
+        else:
+            flash("An incorrect Username and/or Password was entered")
             return redirect(url_for("login"))
-    
+
     return render_template("login.html")
 
 
