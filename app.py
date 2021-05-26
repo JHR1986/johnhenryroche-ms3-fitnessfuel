@@ -43,7 +43,8 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Your registration was successful!")  
+        flash("Your registration was successful!")
+        return redirect(url_for("profile", username=session["user"]))  
     return render_template("register.html")
 
 
@@ -58,6 +59,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"])) 
             else:
                 flash("An incorrect Username and/or Password was entered")
                 return redirect(url_for("login"))
