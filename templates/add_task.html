@@ -3,5 +3,29 @@
 
 <h3>Add Task</h3>
 
-{% endblock %}
+<form method="POST" action="">
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                placeholder="Recipe Name" required>
+            <label for="recipe_name">Recipe Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_description" name="recipe_description" minlength="5"
+                maxlength="200" placeholder="Recipe Description" required>
+            <label for="recipe_description">Recipe Description</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients" minlength="5"
+                maxlength="200" placeholder="Recipe Ingredients" required>
+            <label for="recipe_ingredients">Recipe Ingredients</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
+{% endblock %}
