@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Example Heading</h1>
+<h1>Example Heading</h1>
 
+<div class="card" style="width: 18rem;">
     {% for task in tasks %}
-        {{ task.category_name }}<br>
-        {{ task.recipe_name }}<br>
-        {{ task.recipe_description }}<br>
-        {{ task.recipe_ingredients }}<br>
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ task.category_name }}</h5>
+        <h6>{{ task.recipe_name }}</h6>
+        <p class="card-text">{{ task.recipe_description }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ task.recipe_ingredients }}</li>
+    </ul>
     {% endfor %}
+</div>
+
 
 {% endblock %}
