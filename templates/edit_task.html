@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Task - title to change</h3>
+
+<form method="POST" action="{{ url_for('edit_task', task_id=task._id) }}" class="needs-validation" novalidate>
+    <div class="row">
+        <div class="form-group">
+            <select id="category_name" class="form-control green-text" name="category_name" required>
+                <option value="" disabled selected>Choose Category</option>
+                {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+            <label for="category_name">Task Category</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                placeholder="Recipe Name" required>
+            <label for="recipe_name">Recipe Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_description" name="recipe_description" minlength="5"
+                maxlength="200" placeholder="Recipe Description" required>
+            <label for="recipe_description">Recipe Description</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients" minlength="5"
+                maxlength="200" placeholder="Recipe Ingredients" required>
+            <label for="recipe_ingredients">Recipe Ingredients</label>
+        </div>
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Edit Recipe</button>
+
+</form>
+
+{% endblock %}
