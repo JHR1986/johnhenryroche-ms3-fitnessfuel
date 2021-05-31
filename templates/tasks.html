@@ -16,8 +16,10 @@
         <li class="list-group-item">{{ task.recipe_ingredients }}</li>
     </ul>
     <div>
+        {% if session.user|lower == task.created_by|lower %}
         <a class="btn btn-primary" href="#" role="button">Done</a>
         <a class="btn btn-primary" href="{{ url_for('edit_task', task_id=task._id) }}" role="button">Edit</a>
+        {% endif %}
     </div>
     <div>
 
