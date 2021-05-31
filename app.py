@@ -117,9 +117,8 @@ def edit_task(task_id):
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "created_by": session["user"] 
         }
-        mongo.db.tasks.insert_one(task)
-        flash("Recipe Successfully Added")
-        return redirect(url_for("get_tasks"))
+        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        flash("Recipe Successfully Updated")
 
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
