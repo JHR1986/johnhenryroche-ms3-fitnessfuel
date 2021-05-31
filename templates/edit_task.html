@@ -7,9 +7,13 @@
     <div class="row">
         <div class="form-group">
             <select id="category_name" class="form-control green-text" name="category_name" required>
-                <option value="" disabled selected>Choose Category</option>
+                <option value="" disabled>Choose Category</option>
                 {% for category in categories %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% if category.category_name == task.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
             <label for="category_name">Task Category</label>
@@ -18,26 +22,28 @@
     <div class="row">
         <div class="form-group">
             <input type="text" class="form-control" id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-                placeholder="Recipe Name" required>
+                value = "{{ task.recipe_name }}" placeholder="Recipe Name" required>
             <label for="recipe_name">Recipe Name</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <input type="text" class="form-control" id="recipe_description" name="recipe_description" minlength="5"
-                maxlength="200" placeholder="Recipe Description" required>
+                maxlength="200" value = "{{ task.recipe_description }}" placeholder="Recipe Description" required>
             <label for="recipe_description">Recipe Description</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients" minlength="5"
-                maxlength="200" placeholder="Recipe Ingredients" required>
+                maxlength="200" value = "{{ task.recipe_ingredients }}" placeholder="Recipe Ingredients" required>
             <label for="recipe_ingredients">Recipe Ingredients</label>
         </div>
     </div>
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Edit Recipe</button>
+    <!-- Button to cancel edit task -->
+    <a class="btn btn-primary" href="{{ url_for('get_tasks') }}" role="button">Cancel</a>
 
 </form>
 
