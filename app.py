@@ -96,7 +96,7 @@ def add_task():
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
             "created_by": session["user"] 
         }
         mongo.db.tasks.insert_one(task)
