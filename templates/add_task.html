@@ -3,7 +3,7 @@
 
 <h3>Add Task - title to change</h3>
 
-<form method="POST" action="" class="needs-validation" novalidate>
+<form method="POST" action="{{ url_for('add_task') }}" class="needs-validation" novalidate>
     <div class="row">
         <div class="form-group">
             <select id="category_name" class="form-control green-text" name="category_name" required>
@@ -36,7 +36,8 @@
             <label for="recipe_ingredients">Recipe Ingredients</label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Add Recipe</button>
 
 </form>
 
