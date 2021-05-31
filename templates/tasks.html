@@ -17,7 +17,7 @@
     </ul>
     <div>
         <a class="btn btn-primary" href="#" role="button">Done</a>
-        <a class="btn btn-primary" href="#" role="button">Edit</a>
+        <a class="btn btn-primary" href="{{ url_for('edit_task', task_id=task._id) }}" role="button">Edit</a>
     </div>
     <div>
 
