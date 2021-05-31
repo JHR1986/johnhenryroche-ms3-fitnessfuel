@@ -89,8 +89,20 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_task")
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+    if request.method == "POST":
+        task = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "created_by": session["user"] 
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_tasks"))
+        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_task.html", categories=categories)
 
