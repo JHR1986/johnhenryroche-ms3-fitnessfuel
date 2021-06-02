@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
-    return render_template("tasks.html", tasks=tasks)
+    return render_template("tasks.html", tasks=tasks, page="get_tasks")
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -52,7 +52,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Your registration was successful!")
         return redirect(url_for("profile", username=session["user"]))  
-    return render_template("register.html")
+    return render_template("register.html", page="register")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -76,7 +76,7 @@ def login():
             flash("An incorrect Username and/or Password was entered")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", page="login")
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -86,7 +86,7 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("login"), page="profile")
 
 
 @app.route("/logout")
