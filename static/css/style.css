@@ -19,6 +19,7 @@
 .navbar-nav li {
   padding-right: 2px;
   margin-right: 20px;
+  text-shadow: 0.2px 0 0 black;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -37,6 +38,24 @@
 }
 
 /*End of Navigation - all pages*/
+
+/*Footer Section - all pages*/
+footer {
+  width: 100%;
+  bottom: 0;
+}
+
+footer .row {
+  text-align: center;
+  color: #FF178D;
+  text-shadow: 0.2px 0 0 black;
+}
+
+.footer-text {
+  font-size: 20px;
+  margin-top: 1.5px;
+}
+/*End of Footer Section - all pages*/
 
 .green-text:valid {
     background-color: #00FF7F;
