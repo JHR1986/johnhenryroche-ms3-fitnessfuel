@@ -23,33 +23,30 @@
 
     <!-- Navigation Section - base.html -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('get_tasks') }}"><img src="static/images/fitnessfuellogo.png" alt="Fitness Fuel Logo"></a>
+        <a class="navbar-brand" href="{{ url_for('get_tasks') }}"><img src="{{ url_for('static', filename='images/fitnessfuellogo.png') }} " alt="Fitness Fuel Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-right" id="navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ 'active' if page == 'get_tasks' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('get_tasks') }}">Home</a>
                 </li>
                 {% if session.user %}
-                <li class="nav-item">
+                <li class="nav-item {{ 'active' if page == 'profile' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('add_task') }}">New Recipe</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Manage Recipes</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
+                <li class="nav-item {{ 'active' if page == 'login' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ 'active' if page == 'register' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('register') }}">Register</a>
                 </li>
                 {% endif %}
