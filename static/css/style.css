@@ -11,9 +11,9 @@
 }
 
 .navbar-brand img {
-  height: 40px;
+  height: 85px;
   margin-left: 20px;
-  width: 160px;
+  width: 190px;
 }
 
 .navbar-nav li {
@@ -23,14 +23,14 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #FF178D;
+  color: #3358D4;
   padding-top: 15px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #FF17E1;
+  color: #00B576;
   text-decoration: underline;
-  text-decoration-color: #FF178D;
+  text-decoration-color: #3358D4;
 }
 
 .navbar-collapse {
@@ -47,7 +47,7 @@ footer {
 
 footer .row {
   text-align: center;
-  color: #FF178D;
+  color: #3358D4;
   text-shadow: 0.2px 0 0 black;
 }
 
@@ -62,7 +62,7 @@ footer .row {
   }
 
 .centre {
-  margin: 0 auto; 
+  margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -72,11 +72,11 @@ footer .row {
 }
 
 .title {
-  text-align: center;
+  margin: 0 auto;
 }
 
 .hero-image {
-  height: 700px;
+  height: 800px;
   background: url("../images/optimisedloginimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
