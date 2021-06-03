@@ -4,7 +4,7 @@
 
 <body class="hero-image2">
     <div class="row">
-        <form class="needs-validation centre mt-2 mb-2" novalidate method="POST" action="{{ url_for('register') }}">
+        <form class="needs-validation centre mt-2 mb-2 px-2" novalidate method="POST" action="{{ url_for('register') }}">
             <div class="card cardstuff">
                 <h4 class="mt-2 mb-2 title">Register</h4>
                 <div class="card-body">
@@ -18,7 +18,7 @@
                                 Looks good!
                             </div>
                             <div class="invalid-feedback">
-                                Usernames (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                                Usernames (5-10 characters) with letters and/or numbers (a-z, A-Z, 0-9)
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 Looks good!
                             </div>
                             <div class="invalid-feedback">
-                                Passwords (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                                Passwords (5-10 characters) with letters and/or numbers (a-z, A-Z, 0-9)
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 title">
+                <div class="row title">
+                    <div class="col-sm-12">
                         <p>
                             Have you already registered? <a href="{{ url_for('login') }}">Log In</a>
                         </p>
