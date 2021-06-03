@@ -128,7 +128,7 @@ def edit_task(task_id):
             "created_by": session["user"] 
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
-        flash("Recipe Successfully Updated")
+        flash("Phrase Successfully Updated")
 
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
