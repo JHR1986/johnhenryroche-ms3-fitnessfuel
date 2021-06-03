@@ -28,13 +28,11 @@
     {% for task in tasks %}
     <div class="card-body">
         <h5 class="card-title">{{ task.category_name }}</h5>
-        <h6>{{ task.recipe_name }}</h6>
-        <p class="card-text">{{ task.recipe_description }}</p>
+        <h6>{{ task.english_name }}</h6>
+        <p class="card-text">{{ task.korean_name }}</p>
+        <p>{{ task.brief_description }}</p>
         <p>by: {{ task.created_by }}</p>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ task.recipe_ingredients }}</li>
-    </ul>
     <div>
         {% if session.user|lower == task.created_by|lower %}
         <a class="btn btn-primary" href="{{ url_for('delete_task', task_id=task._id) }}" role="button">Delete</a>
