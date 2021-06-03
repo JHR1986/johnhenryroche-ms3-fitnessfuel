@@ -3,7 +3,7 @@
 
 <h1>All Recipes</h1>
 
-<div class=" row card">
+<div class="row card">
     <div class="card-body">
         <form action="{{ url_for('search') }}" method="POST">
             <div class="row">
@@ -20,6 +20,8 @@
         </form>
     </div>
 </div>
+
+
 
 {% if tasks|length > 0 %}
 <div class="card row">
