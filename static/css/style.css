@@ -60,3 +60,35 @@ footer .row {
 .green-text:valid {
     background-color: #00FF7F;
   }
+
+.centre {
+  margin: 0 auto; 
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.cardstuff {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.hero-image {
+  height: 700px;
+  background: url("../images/optimisedloginimage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.hero-image2 {
+  height: 700px;
+  background: url("../images/optimisedregisterimage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
