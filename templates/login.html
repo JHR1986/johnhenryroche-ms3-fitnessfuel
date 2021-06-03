@@ -3,8 +3,8 @@
 
 <body class="hero-image">
     <div class="row">
-        <form class="needs-validation centre mt-2 mb-2" novalidate method="POST" action="{{ url_for('login') }}">
-            <div class="card cardstuff">
+        <form class="needs-validation centre mt-2 mb-2 px-2" novalidate method="POST" action="{{ url_for('login') }}">
+            <div class="card">
                 <h4 class="mt-2 mb-2 title">Log In</h4>
                 <div class="card-body">
                     <div class="row">
@@ -16,8 +16,8 @@
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
-                            <div class="invalid-feedback">
-                                Usernames (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                            <div class="invalid-feedback textp">
+                                Usernames (5-10 chars) with letters and/or numbers (a-z, A-Z, 0-9)
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                 Looks good!
                             </div>
                             <div class="invalid-feedback">
-                                Passwords (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                                Passwords (5-10 chars) with letters and/or numbers (a-z, A-Z, 0-9)
                             </div>
                         </div>
                     </div>
@@ -39,8 +39,8 @@
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 title">
+                <div class="row title">
+                    <div class="col-sm-12">
                         <p>
                             Haven't Registered Yet? <a href="{{ url_for('register') }}">Register Now</a>
                         </p>
