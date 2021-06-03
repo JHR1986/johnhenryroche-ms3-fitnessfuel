@@ -18,11 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/home")
-def home():
-    return render_template("index.html", page="home")
-
-
+@app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
