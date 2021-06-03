@@ -104,13 +104,13 @@ def add_task():
     if request.method == "POST":
         task = {
             "category_name": request.form.get("category_name"),
-            "recipe_name": request.form.get("recipe_name"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "english_name": request.form.get("english_name"),
+            "korean_name": request.form.get("korean_name"),
+            "brief_description": request.form.get("brief_description"),
             "created_by": session["user"] 
         }
         mongo.db.tasks.insert_one(task)
-        flash("Recipe Successfully Added")
+        flash("Phrase Successfully Added")
         return redirect(url_for("get_tasks"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -122,9 +122,9 @@ def edit_task(task_id):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
-            "recipe_name": request.form.get("recipe_name"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "english_name": request.form.get("english_name"),
+            "korean_name": request.form.get("korean_name"),
+            "brief_description": request.form.get("brief_description"),
             "created_by": session["user"] 
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
@@ -138,7 +138,7 @@ def edit_task(task_id):
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
-    flash("Recipe Successfully Deleted")
+    flash("Phrase Successfully Deleted")
     return redirect(url_for("get_tasks"))
 
 
