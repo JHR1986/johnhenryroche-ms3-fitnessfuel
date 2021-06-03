@@ -65,10 +65,7 @@ footer .row {
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.cardstuff {
-  padding: 20px;
+  width: 40%;
 }
 
 .title {
@@ -92,3 +89,19 @@ footer .row {
   background-size: cover;
   width: 100%;
 }
+
+.images img {
+  height: 400px;
+  width: 50%;
+  border: 1px solid #000000;
+}
+
+.flash-message {
+  margin: 0 auto;
+  color: #3358D4;
+  border: 1px solid #00B576;
+  background-color: white;
+  padding-left: 10px;
+}
+
+
