@@ -18,7 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html", page="home")
+
+
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
@@ -84,14 +88,14 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, page="profile")
 
-    return redirect(url_for("login"), page="profile")
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
-    flash("You have been logged out")
+    flash("You have been successfully logged out!")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -111,7 +115,7 @@ def add_task():
         return redirect(url_for("get_tasks"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_task.html", categories=categories)
+    return render_template("add_task.html", categories=categories, page="add_task")
 
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
