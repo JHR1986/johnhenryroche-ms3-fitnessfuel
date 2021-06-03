@@ -1,56 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<h3>Log In</h3>
-
-<div class="row">
-    <form class="needs-validation" novalidate method="POST" action="{{ url_for('login') }}">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control green-text" id="username" name="username"
-                            aria-describedby="usernameHelp" placeholder="Username" minlength="6" maxlength="14"
-                            pattern="^[a-zA-Z0-9]{6,14}$" required>
-                        <div class="valid-feedback">
-                            Looks good!
+<body class="hero-image">
+    <div class="row">
+        <form class="needs-validation centre mt-2 mb-2" novalidate method="POST" action="{{ url_for('login') }}">
+            <div class="card cardstuff">
+                <h4 class="mt-2 mb-2 title">Log In</h4>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="username"><h5><i class="fas fa-user"></i> Username</h5></label>
+                            <input type="text" class="form-control green-text" id="username" name="username"
+                                aria-describedby="usernameHelp" placeholder="Username" minlength="6" maxlength="14"
+                                pattern="^[a-zA-Z0-9]{6,14}$" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Usernames (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                            </div>
                         </div>
-                        <div class="invalid-feedback">
-                            Usernames (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="password"><h5><i class="fas fa-key"></i> Password</h5></label>
+                            <input type="password" class="form-control green-text" id="password" name="password"
+                                placeholder="Password" minlength="6" maxlength="14" pattern="^[a-zA-Z0-9]{6,14}$"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Passwords (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
+                            </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control green-text" id="password" name="password" placeholder="Password"
-                            minlength="6" maxlength="14" pattern="^[a-zA-Z0-9]{6,14}$" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Passwords (5-10 characters) must contain letters and/or numbers (a-z, A-Z, 0-9)
-                        </div>
+                    <div class="col-sm-12 title">
+                        <p>
+                            Haven't Registered Yet? <a href="{{ url_for('register') }}">Register Now</a>
+                        </p>
                     </div>
-                </div>
-                <div class="row">
-                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
-
-
-<div class="row">
-    <div class="col-sm-12">
-        <p>
-            Haven't Registered Yet?<a href="{{ url_for('register') }}">Register Now</a>
-        </p>
+        </form>
     </div>
-</div>
-
+</body>
 
 {% endblock %}
