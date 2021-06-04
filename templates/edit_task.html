@@ -1,68 +1,80 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Edit Task - title to change</h3>
-
-<form method="POST" action="{{ url_for('edit_task', task_id=task._id) }}" class="needs-validation" novalidate>
+<!--Form Section - login.html-->
+<body class="edittask-heroimage">
     <div class="row">
-        <div class="form-group">
-            <select id="category_name" class="form-control green-text" name="category_name" required>
-                <option value="" disabled>Choose Category</option>
-                {% for category in categories %}
-                {% if category.category_name == task.category_name %}
-                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                {% else %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-            <label for="category_name">Task Category</label>
-        </div>
+        <form method="POST" action="{{ url_for('edit_task', task_id=task._id) }}" class="centre-card needs-validation"
+            novalidate>
+            <div class="card card-styling">
+                <h3 class="mt-2 mb-2 centre-text title-text">Edit Phrase</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <select id="category_name" class="form-control green-text" name="category_name" required>
+                                <option value="" disabled>Choose Category</option>
+                                {% for category in categories %}
+                                {% if category.category_name == task.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}
+                                </option>
+                                {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Task Category</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="english_name" name="english_name"
+                                minlength="2" maxlength="200" value="{{ task.english_name }}" placeholder="English Name"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter English phrase.
+                            </div>
+                            <label for="english_name">English Phrase</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control" id="korean_name" name="korean_name" minlength="2"
+                                maxlength="200" value="{{ task.korean_name }}" placeholder="Korean Name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter Korean phrase.
+                            </div>
+                            <label for="korean_name">Korean Phrase</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control" id="brief_description" name="brief_description"
+                                minlength="5" maxlength="200" value="{{ task.brief_description }}"
+                                placeholder="Brief Description" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter Brief Description of Word.
+                            </div>
+                            <label for="brief_description">Brief Description</label>
+                        </div>
+                    </div>
+                    <!-- Submit Button - edit_task.html -->
+                    <button type="submit" class="btn btn-primary button">Edit Phrase</button>
+                    <!-- Button to cancel edit_task Task -->
+                    <a class="btn btn-primary button-red" href="{{ url_for('get_tasks') }}" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
     </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control green-text" id="english_name" name="english_name" minlength="2"
-                maxlength="200" value="{{ task.english_name }}" placeholder="English Name" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter English phrase.
-            </div>
-            <label for="english_name">English Phrase</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control" id="korean_name" name="korean_name" minlength="2" maxlength="200"
-                value="{{ task.korean_name }}" placeholder="Korean Name" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback textp">
-                Please enter Korean phrase.
-            </div>
-            <label for="korean_name">Korean Phrase</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control" id="brief_description" name="brief_description" minlength="5"
-                maxlength="200" value="{{ task.brief_description }}" placeholder="Brief Description" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter Brief Description of Word.
-            </div>
-            <label for="brief_description">Brief Description</label>
-        </div>
-    </div>
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary">Edit Phrase</button>
-    <!-- Button to cancel edit task -->
-    <a class="btn btn-primary" href="{{ url_for('get_tasks') }}" role="button">Cancel</a>
-
-</form>
+</body>
+<!--End of Form Section - edit_task.html-->
 
 {% endblock %}
