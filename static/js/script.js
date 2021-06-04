@@ -1,7 +1,10 @@
+
+// Function for validation of forms:
+
 (function() {
     'use strict';
     window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    // Fetch all of the forms that we are applying custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
