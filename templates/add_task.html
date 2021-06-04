@@ -12,27 +12,51 @@
                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                 {% endfor %}
             </select>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback textp">
+                Please choose category.
+            </div>
             <label for="category_name">Task Category</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="text" class="form-control" id="english_name" name="english_name" minlength="5" maxlength="50"
-                placeholder="English Name" required>
-            <label for="english_name">English Name</label>
+            <input type="text" class="form-control green-text" id="english_name" name="english_name" minlength="2"
+                maxlength="200" placeholder="English Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback textp">
+                Please enter English phrase.
+            </div>
+            <label for="english_name">English Phrase</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="text" class="form-control" id="korean_name" name="korean_name" minlength="5"
+            <input type="text" class="form-control green-text" id="korean_name" name="korean_name" minlength="2"
                 maxlength="200" placeholder="Korean Name" required>
-            <label for="korean_name">Korean Name</label>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback textp">
+                Please enter Korean phrase.
+            </div>
+            <label for="korean_name">Korean Phrase</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="text" class="form-control" id="brief_description" name="brief_description" minlength="5"
-                maxlength="200" placeholder="Brief Description" required>
+            <input type="text" class="form-control green-text" id="brief_description" name="brief_description"
+                minlength="5" maxlength="200" placeholder="Brief Description" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback textp">
+                Please enter Brief Description of Word.
+            </div>
             <label for="brief_description">Brief Description</label>
         </div>
     </div>
