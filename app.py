@@ -161,6 +161,18 @@ def delete_task(task_id):
     return redirect(url_for("get_tasks"))
 
 
+# Renders a 404 error
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html', error=error), 404
+
+
+# Renders a 500 error
+@app.errorhandler(500)
+def something_wrong(error):
+    return render_template('500.html', error=error), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
