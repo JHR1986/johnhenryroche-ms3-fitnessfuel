@@ -109,6 +109,15 @@ footer .row {
   width: 100%;
 }
 
+.edittask-heroimage {
+  height: 100%;
+  background: url("../images/optimisededittaskimage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
 /*Flash Messages - all pages*/
 .flash-message {
   margin: 0 auto;
@@ -130,6 +139,14 @@ footer .row {
 .button:hover {
       background-color: #3358D4;
   }
+
+.button-red {
+  border-width: small;
+  color: #ffffff;
+  border-color: #3358D4;
+  background-color: rgb(245, 9, 9);
+  border-radius: 25%;
+}
 
 /*Hyperlinks - all pages*/
 .links {
