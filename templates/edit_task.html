@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--Form Section - login.html-->
+<!--Form Section - edit_task.html-->
 <body class="edittask-heroimage">
     <div class="row">
         <form method="POST" action="{{ url_for('edit_task', task_id=task._id) }}" class="centre-card needs-validation"
@@ -68,7 +68,7 @@
                     </div>
                     <!-- Submit Button - edit_task.html -->
                     <button type="submit" class="btn btn-primary button">Edit Phrase</button>
-                    <!-- Button to cancel edit_task Task -->
+                    <!-- Cancel Task Button - edit_task.html -->
                     <a class="btn btn-primary button-red" href="{{ url_for('get_tasks') }}" role="button">Cancel</a>
                 </div>
             </div>
