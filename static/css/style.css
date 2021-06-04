@@ -57,11 +57,13 @@ footer .row {
 }
 /*End of Footer Section - all pages*/
 
+/*Validation for form elements*/
 .green-text:valid {
     background-color: #00FF7F;
   }
 
-.centre {
+/*Form for Access to Profile - login & register pages*/
+.centre-card {
   margin: 0 auto;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -69,11 +71,12 @@ footer .row {
   padding-left: 30px;
 }
 
-.title {
+.centre-text {
   margin: 0 auto;
 }
 
-.hero-image {
+/*Background hero images - login & register pages*/
+.login-heroimage {
   height: 800px;
   background: url("../images/optimisedloginimage.jpg");
   background-position: center;
@@ -82,7 +85,7 @@ footer .row {
   width: 100%;
 }
 
-.hero-image2 {
+.register-heroimage {
   height: 800px;
   background: url("../images/optimisedregisterimage.jpg");
   background-position: center;
@@ -91,12 +94,7 @@ footer .row {
   width: 100%;
 }
 
-.images img {
-  height: 400px;
-  width: 50%;
-  border: 1px solid #000000;
-}
-
+/*Flash Messages - all pages*/
 .flash-message {
   margin: 0 auto;
   color: #3358D4;
