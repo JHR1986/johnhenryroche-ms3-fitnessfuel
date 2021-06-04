@@ -75,6 +75,21 @@ footer .row {
   margin: 0 auto;
 }
 
+.title-text {
+  color: #3358D4;
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.card-styling {
+  border-radius: 25px;
+  border: 2px solid #00B576;
+}
+
+.input-area {
+  padding-left: 10px;
+}
+
 /*Background hero images - login & register pages*/
 .login-heroimage {
   height: 800px;
@@ -103,4 +118,22 @@ footer .row {
   padding-left: 10px;
 }
 
+/*Buttons - all pages*/
+.button {
+    border-width: small;
+    color: #ffffff;
+    border-color: #3358D4;
+    background-color: #00B576;
+    border-radius: 25%;
+  }
+  
+.button:hover {
+      background-color: #3358D4;
+  }
+
+/*Hyperlinks - all pages*/
+.links {
+  color: #3358D4;
+  font-weight: 500;
+}
 
