@@ -9,11 +9,11 @@
             <select id="category_name" class="form-control green-text" name="category_name" required>
                 <option value="" disabled>Choose Category</option>
                 {% for category in categories %}
-                    {% if category.category_name == task.category_name %}
-                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                    {% else %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endif %}
+                {% if category.category_name == task.category_name %}
+                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                {% else %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% endif %}
                 {% endfor %}
             </select>
             <label for="category_name">Task Category</label>
@@ -21,22 +21,40 @@
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="text" class="form-control" id="english_name" name="english_name" minlength="5" maxlength="50"
-                value = "{{ task.english_name }}" placeholder="English Name" required>
-            <label for="english_name">English Name</label>
+            <input type="text" class="form-control green-text" id="english_name" name="english_name" minlength="2"
+                maxlength="200" value="{{ task.english_name }}" placeholder="English Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter English phrase.
+            </div>
+            <label for="english_name">English Phrase</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
-            <input type="text" class="form-control" id="korean_name" name="korean_name" minlength="5"
-                maxlength="200" value = "{{ task.korean_name }}" placeholder="Korean Name" required>
-            <label for="korean_name">Korean Name</label>
+            <input type="text" class="form-control" id="korean_name" name="korean_name" minlength="2" maxlength="200"
+                value="{{ task.korean_name }}" placeholder="Korean Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback textp">
+                Please enter Korean phrase.
+            </div>
+            <label for="korean_name">Korean Phrase</label>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <input type="text" class="form-control" id="brief_description" name="brief_description" minlength="5"
-                maxlength="200" value = "{{ task.brief_description }}" placeholder="Brief Description" required>
+                maxlength="200" value="{{ task.brief_description }}" placeholder="Brief Description" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter Brief Description of Word.
+            </div>
             <label for="brief_description">Brief Description</label>
         </div>
     </div>
