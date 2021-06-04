@@ -1,68 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Add Task - title to change</h3>
-
-<form method="POST" action="{{ url_for('add_task') }}" class="needs-validation" novalidate>
+<body class="login-heroimage">
     <div class="row">
-        <div class="form-group">
-            <select id="category_name" class="form-control green-text" name="category_name" required>
-                <option value="" disabled selected>Choose Category</option>
-                {% for category in categories %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                {% endfor %}
-            </select>
-            <div class="valid-feedback">
-                Looks good!
+        <form method="POST" action="{{ url_for('add_task') }}" class="centre-card needs-validation" novalidate>
+            <div class="card card-styling">
+                <h3 class="mt-2 mb-2 centre-text title-text">Add New Phrase</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <select id="category_name" class="form-control green-text" name="category_name" required>
+                                <option value="" disabled selected>Choose Category</option>
+                                {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please choose category.
+                            </div>
+                            <label for="category_name"><h5>Task Category</h5></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="english_name" name="english_name"
+                                minlength="2" maxlength="200" placeholder="English Name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter English phrase
+                            </div>
+                            <label for="english_name"><h5>English Phrase</h5></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="korean_name" name="korean_name"
+                                minlength="2" maxlength="200" placeholder="Korean Name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter Korean phrase.
+                            </div>
+                            <label for="korean_name"><h5>Korean Phrase</h5></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="brief_description"
+                                name="brief_description" minlength="5" maxlength="200" placeholder="Brief Description"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter Brief Description of Word.
+                            </div>
+                            <label for="brief_description"><h5>Brief Description</h5></label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary button">Add Phrase</button>
+                </div>
             </div>
-            <div class="invalid-feedback textp">
-                Please choose category.
-            </div>
-            <label for="category_name">Task Category</label>
-        </div>
+        </form>
     </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control green-text" id="english_name" name="english_name" minlength="2"
-                maxlength="200" placeholder="English Name" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback textp">
-                Please enter English phrase.
-            </div>
-            <label for="english_name">English Phrase</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control green-text" id="korean_name" name="korean_name" minlength="2"
-                maxlength="200" placeholder="Korean Name" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback textp">
-                Please enter Korean phrase.
-            </div>
-            <label for="korean_name">Korean Phrase</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <input type="text" class="form-control green-text" id="brief_description" name="brief_description"
-                minlength="5" maxlength="200" placeholder="Brief Description" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback textp">
-                Please enter Brief Description of Word.
-            </div>
-            <label for="brief_description">Brief Description</label>
-        </div>
-    </div>
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary">Add Phrase</button>
-
-</form>
+</body>
 
 {% endblock %}
