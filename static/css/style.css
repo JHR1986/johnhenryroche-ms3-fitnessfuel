@@ -92,7 +92,7 @@ footer .row {
 
 /*Background hero images - login & register pages*/
 .login-heroimage {
-  height: 800px;
+  height: 100%;
   background: url("../images/optimisedloginimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -101,7 +101,7 @@ footer .row {
 }
 
 .register-heroimage {
-  height: 800px;
+  height: 100%;
   background: url("../images/optimisedregisterimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -136,4 +136,5 @@ footer .row {
   color: #3358D4;
   font-weight: 500;
 }
+
 
