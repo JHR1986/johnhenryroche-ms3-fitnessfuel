@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Form Section - add_task.html-->
 <body class="login-heroimage">
     <div class="row">
         <form method="POST" action="{{ url_for('add_task') }}" class="centre-card needs-validation" novalidate>
@@ -21,7 +22,9 @@
                             <div class="invalid-feedback textp">
                                 Please choose category.
                             </div>
-                            <label for="category_name"><h5>Task Category</h5></label>
+                            <label for="category_name">
+                                <h5>Task Category</h5>
+                            </label>
                         </div>
                     </div>
                     <div class="row">
@@ -34,7 +37,9 @@
                             <div class="invalid-feedback textp">
                                 Please enter English phrase
                             </div>
-                            <label for="english_name"><h5>English Phrase</h5></label>
+                            <label for="english_name">
+                                <h5>English Phrase</h5>
+                            </label>
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +52,9 @@
                             <div class="invalid-feedback textp">
                                 Please enter Korean phrase.
                             </div>
-                            <label for="korean_name"><h5>Korean Phrase</h5></label>
+                            <label for="korean_name">
+                                <h5>Korean Phrase</h5>
+                            </label>
                         </div>
                     </div>
                     <div class="row">
@@ -61,15 +68,18 @@
                             <div class="invalid-feedback textp">
                                 Please enter Brief Description of Word.
                             </div>
-                            <label for="brief_description"><h5>Brief Description</h5></label>
+                            <label for="brief_description">
+                                <h5>Brief Description</h5>
+                            </label>
                         </div>
                     </div>
-                    <!-- Submit Button -->
+                    <!-- Submit Button - add_task.html -->
                     <button type="submit" class="btn btn-primary button">Add Phrase</button>
                 </div>
             </div>
         </form>
     </div>
 </body>
+<!--End of Form Section - add_task.html-->
 
 {% endblock %}
