@@ -4,11 +4,11 @@
 <body class="login-heroimage">
     <div class="row">
         <form class="needs-validation centre-card mt-2 mb-2 px-2" novalidate method="POST" action="{{ url_for('login') }}">
-            <div class="card">
-                <h4 class="mt-2 mb-2 centre-text">Log In</h4>
+            <div class="card card-styling">
+                <h4 class="mt-2 mb-2 centre-text title-text">Log In</h4>
                 <div class="card-body">
                     <div class="row">
-                        <div class="form-group">
+                        <div class="form-group input-area">
                             <label for="username">
                                 <h5><i class="fas fa-user"></i> Username</h5>
                             </label>
@@ -18,13 +18,13 @@
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
-                            <div class="invalid-feedback textp">
+                            <div class="invalid-feedback">
                                 Usernames (5-10 chars) with letters and/or numbers (a-z, A-Z, 0-9)
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group">
+                        <div class="form-group input-area">
                             <label for="password">
                                 <h5><i class="fas fa-key"></i> Password</h5>
                             </label>
@@ -39,14 +39,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="row input-area">
+                        <button type="submit" class="btn btn-primary button">Login</button>
                     </div>
                 </div>
                 <div class="row centre-text">
                     <div class="col-sm-12">
                         <p>
-                            Haven't Registered Yet? <a href="{{ url_for('register') }}">Register Now</a>
+                            Haven't Registered Yet? <a href="{{ url_for('register') }}"><span class="links">Register Now</span></a>
                         </p>
                     </div>
                 </div>
