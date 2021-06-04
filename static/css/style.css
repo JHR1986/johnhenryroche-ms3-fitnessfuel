@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
+/* General Body*/
+body {
+  overflow-x: hidden;
+  font-family: "PT Sans", sans-serif;
+}
+
 /*Navigation - all pages*/
 .navbar {
   text-transform: uppercase;
@@ -56,6 +62,13 @@ footer .row {
   margin-top: 1.5px;
 }
 /*End of Footer Section - all pages*/
+
+/*Home Page Image - index.html*/
+.images img {
+height: 100%;
+width: 100%;
+border: 1px solid #000000;
+}
 
 /*Validation for form elements*/
 .green-text:valid {
@@ -141,7 +154,7 @@ footer .row {
     border-width: small;
     color: #ffffff;
     border-color: #3358D4;
-    background-color: #00B576;
+    background-color: #013200;
     border-radius: 25%;
   }
   
@@ -160,7 +173,13 @@ footer .row {
 /*Hyperlinks - all pages*/
 .links {
   color: #3358D4;
-  font-weight: 500;
+  font-weight: 800;
 }
+
+.container-fluid{
+  padding: 10px;
+}
+
+
 
 
