@@ -90,7 +90,7 @@ footer .row {
   padding-left: 10px;
 }
 
-/*Background hero images - login & register pages*/
+/*Background hero images - login, register, addtask & edittask pages*/
 .login-heroimage {
   height: 100%;
   background: url("../images/optimisedloginimage.jpg");
@@ -103,6 +103,15 @@ footer .row {
 .register-heroimage {
   height: 100%;
   background: url("../images/optimisedregisterimage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.addtask-heroimage {
+  height: 100%;
+  background: url("../images/optimisedaddtaskimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
