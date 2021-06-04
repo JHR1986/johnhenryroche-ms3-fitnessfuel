@@ -18,16 +18,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# App route for home page
 @app.route("/")
 def home():
     return render_template("index.html", page="home")
 
+
+# App route for phrases page
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.tasks.find())
     return render_template("tasks.html", tasks=tasks, page="get_tasks")
 
 
+# App route for search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -35,9 +39,11 @@ def search():
     return render_template("tasks.html", tasks=tasks)
 
 
+# App route for register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # Check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -51,20 +57,23 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+        # Put the new user into a 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Your registration was successful!")
         return redirect(url_for("profile", username=session["user"]))  
     return render_template("register.html", page="register")
 
 
+# App route for login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
+        # Check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
+            # Ensure that the hashed password matches the users input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -72,17 +81,22 @@ def login():
                     return redirect(url_for(
                         "profile", username=session["user"])) 
             else:
+                # Invalid password match
                 flash("An incorrect Username and/or Password was entered")
                 return redirect(url_for("login"))
 
         else:
+            # The username does not exist
             flash("An incorrect Username and/or Password was entered")
             return redirect(url_for("login"))
 
     return render_template("login.html", page="login")
 
+
+# App route for profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Grab the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -92,13 +106,16 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# App route for logout
 @app.route("/logout")
 def logout():
+    # Remove the user from the session cookie
     flash("You have been successfully logged out!")
     session.pop("user")
     return redirect(url_for("login"))
 
 
+# App route for add task page
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
@@ -117,6 +134,7 @@ def add_task():
     return render_template("add_task.html", categories=categories, page="add_task")
 
 
+# App route for edit task page
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     if request.method == "POST":
@@ -135,6 +153,7 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
+# App route for delete task function
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
