@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<body class="hero-image">
+<body class="login-heroimage">
     <div class="row">
-        <form class="needs-validation centre mt-2 mb-2 px-2" novalidate method="POST" action="{{ url_for('login') }}">
+        <form class="needs-validation centre-card mt-2 mb-2 px-2" novalidate method="POST" action="{{ url_for('login') }}">
             <div class="card">
-                <h4 class="mt-2 mb-2 title">Log In</h4>
+                <h4 class="mt-2 mb-2 centre-text">Log In</h4>
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group">
@@ -43,7 +43,7 @@
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </div>
-                <div class="row title">
+                <div class="row centre-text">
                     <div class="col-sm-12">
                         <p>
                             Haven't Registered Yet? <a href="{{ url_for('register') }}">Register Now</a>
