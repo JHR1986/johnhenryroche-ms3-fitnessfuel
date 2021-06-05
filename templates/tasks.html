@@ -12,7 +12,8 @@
                 </div>
             </div>
             <div class="row">
-                <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_tasks') }}" role="button">Reset</a>
+                <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_tasks') }}"
+                    role="button">Reset</a>
                 <button class="btn btn-primary button-margin button" type="submit">Search</button>
             </div>
     </div>
@@ -20,16 +21,14 @@
 </div>
 </div>
 
-
-
 {% if tasks|length > 0 %}
 <div class="card row">
     {% for task in tasks %}
     <div class="card-body phrases">
-        <h5 class="card-title">{{ task.category_name }}</h5>
-        <h6>{{ task.english_name }}</h6>
-        <h6>{{ task.korean_name }}</h6>
-        <p class="card-text">{{ task.brief_description }}</p>
+        <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ task.category_name }}</h5>
+        <h6><i class="far fa-comment-dots"></i> {{ task.english_name }}</h6>
+        <h6><i class="far fa-comment-dots"></i> {{ task.korean_name }}</h6>
+        <p class="card-text"><i class="fas fa-clipboard-list"></i> {{ task.brief_description }}</p>
         <h6>by: {{ task.created_by }}</h6>
         {% if session.user|lower == task.created_by|lower %}
         <a class="btn btn-primary button-red" href="{{ url_for('delete_task', task_id=task._id) }}"
