@@ -22,13 +22,13 @@
                                 {% endif %}
                                 {% endfor %}
                             </select>
-                            <label for="category_name">Task Category</label>
+                            <label for="category_name"><i class="fas fa-clipboard-list"></i> Task Category</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
                             <input type="text" class="form-control green-text" id="english_name" name="english_name"
-                                minlength="2" maxlength="20" value="{{ task.english_name }}" placeholder="English Name"
+                                minlength="5" maxlength="50" value="{{ task.english_name }}" placeholder="English Name"
                                 required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -36,26 +36,26 @@
                             <div class="invalid-feedback">
                                 Please enter English phrase.
                             </div>
-                            <label for="english_name">English Phrase</label>
+                            <label for="english_name"><i class="fas fa-language"></i> English Phrase</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
-                            <input type="text" class="form-control green-text" id="korean_name" name="korean_name" minlength="2"
-                                maxlength="20" value="{{ task.korean_name }}" placeholder="Korean Name" required>
+                            <input type="text" class="form-control green-text" id="korean_name" name="korean_name" minlength="5"
+                                maxlength="50" value="{{ task.korean_name }}" placeholder="Korean Name" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                             <div class="invalid-feedback textp">
                                 Please enter Korean phrase.
                             </div>
-                            <label for="korean_name">Korean Phrase</label>
+                            <label for="korean_name"><i class="fas fa-language"></i> Korean Phrase</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
                             <input type="text" class="form-control green-text" id="brief_description" name="brief_description"
-                                minlength="5" maxlength="40" value="{{ task.brief_description }}"
+                                minlength="5" maxlength="50" value="{{ task.brief_description }}"
                                 placeholder="Brief Description" required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -63,7 +63,7 @@
                             <div class="invalid-feedback">
                                 Please enter Brief Description of Word.
                             </div>
-                            <label for="brief_description">Brief Description</label>
+                            <label for="brief_description"><i class="far fa-file-alt"></i> Brief Description</label>
                         </div>
                     </div>
                     <!-- Submit Button - edit_task.html -->
