@@ -1,24 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>All Word Phrases</h1>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Handy Korean Phrases</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
 
 <div class="row card">
-    <div class="card-body">
+    <div class="card-body phrases">
         <form action="{{ url_for('search') }}" method="POST">
             <div class="row">
+                <label for="query">Search Phrases</label>
                 <div class="input-group mb-3">
                     <input type="text" name="query" id="query" minlength="3" aria-label="search"
                         aria-describedby="search box" required>
-                    <label for="query">Search Phrases</label>
-                </div>
-                <div class="row">
-                    <a class="btn btn-primary" href="{{ url_for('get_tasks') }}" role="button">Reset</a>
-                    <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </div>
-        </form>
+            <div class="row">
+                <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_tasks') }}" role="button">Reset</a>
+                <button class="btn btn-primary button-margin button" type="submit">Search</button>
+            </div>
     </div>
+    </form>
+</div>
 </div>
 
 
@@ -26,17 +32,16 @@
 {% if tasks|length > 0 %}
 <div class="card row">
     {% for task in tasks %}
-    <div class="card-body">
+    <div class="card-body phrases">
         <h5 class="card-title">{{ task.category_name }}</h5>
         <h6>{{ task.english_name }}</h6>
-        <p class="card-text">{{ task.korean_name }}</p>
-        <p>{{ task.brief_description }}</p>
-        <p>by: {{ task.created_by }}</p>
-    </div>
-    <div>
+        <h6>{{ task.korean_name }}</h6>
+        <p class="card-text">{{ task.brief_description }}</p>
+        <h6>by: {{ task.created_by }}</h6>
         {% if session.user|lower == task.created_by|lower %}
-        <a class="btn btn-primary" href="{{ url_for('delete_task', task_id=task._id) }}" role="button">Delete</a>
-        <a class="btn btn-primary" href="{{ url_for('edit_task', task_id=task._id) }}" role="button">Edit</a>
+        <a class="btn btn-primary button-red" href="{{ url_for('delete_task', task_id=task._id) }}"
+            role="button">Delete</a>
+        <a class="btn btn-primary button" href="{{ url_for('edit_task', task_id=task._id) }}" role="button">Edit</a>
         {% endif %}
     </div>
     {% endfor %}
