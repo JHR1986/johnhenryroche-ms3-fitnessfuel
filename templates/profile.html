@@ -2,7 +2,7 @@
 {% block content %}
 
 <body class="login-heroimage">
-
+    <!--Start of Flash Message & Jumbotron Section - profile.html-->
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -10,26 +10,26 @@
             </div>
         </div>
     </div>
-
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Handy Korean Phrases</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 class="display-4">Welcome to your profile page!</h1>
+            <p class="lead">From here you can navigate to see phrases added by yourself and other users,
+                and can edit and delete your own entries. There is also a search function which allows you to
+                search for phrases in English and Korean! Now go and learn!
+            </p>
         </div>
     </div>
+    <!--End of Flash Message & Jumbotron Section - profile.html-->
 
-
-
-    <!--Start of Photos Section - index.html -->
+    <!--Start of Cards Section - profile.html-->
     <div class="container-fluid pt-1 pb-2 pl-2 pr-2">
         <div class="row">
             <div class="col-md-6 col-lg-6">
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <h5 class="card-title">See Current Phrases</h5>
+                        <p class="card-text">If you wish to see phrases that have already been created, click the button
+                            below!</p>
                         <a href="{{ url_for('get_tasks') }}" class="btn btn-primary button">Go to Phrases</a>
                     </div>
                 </div>
@@ -37,19 +37,15 @@
             <div class="col-md-6 col-lg-6">
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <h5 class="card-title">Create New Phrase</h5>
+                        <p class="card-text">If you wish to create a new entry click the button below!</p>
                         <a href="{{ url_for('add_task') }}" class="btn btn-primary button">Go to New Phrase</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
+    <!--End of Cards Section - profile.html-->
 </body>
 
-
-
-    {% endblock %}
+{% endblock %}
