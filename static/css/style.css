@@ -12,14 +12,14 @@ body {
   font-weight: 500;
   font-size: 25px;
   letter-spacing: 2px;
-  height: 120px;
+  height: 140px;
   z-index: 9999;
 }
 
 .navbar-brand img {
-  height: 85px;
+  height: 125px;
   margin-left: 20px;
-  width: 190px;
+  width: 125px;
 }
 
 .navbar-nav li {
