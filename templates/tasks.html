@@ -2,24 +2,26 @@
 {% block content %}
 
 <!--Search Section - tasks.html-->
-<div class="card row">
-    <div class="card-body">
-        <form class="centre-card2" action="{{ url_for('search') }}" method="POST">
+<div class="card searchbackground">
+    <div class="card-body search">
+        <form class="centre-card2 pt-1 pb-1" action="{{ url_for('search') }}" method="POST">
             <div class="card card-styling">
                 <div class="card-body">
                     <div class="row">
-                        <label for="query">
-                            <h4 class="centre-text title-text">Search</h4>
+                        <label class="centre-text" for="query">
+                            <h4 class="title-text">Search</h4>
                         </label>
                         <div class="input-group">
-                            <input type="text" name="query" id="query" minlength="3" aria-label="search"
+                            <input class="centre-text" type="text" name="query" id="query" minlength="3" aria-label="search"
                                 aria-describedby="search box" required>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-12-lg centre-text pt-1 pb-1">
                         <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_tasks') }}"
                             role="button">Reset</a>
                         <button class="btn btn-primary button-margin button" type="submit">Search</button>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -30,7 +32,7 @@
 
 <!--Tasks Section - tasks.html-->
 {% if tasks|length > 0 %}
-<div class="card row">
+<div class="card login-heroimage">
     {% for task in tasks %}
     <div class="card-body phrases">
         <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ task.category_name }}</h5>
