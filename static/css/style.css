@@ -193,13 +193,14 @@ border: 1px solid #000000;
   padding: 5px;
 }
 
+/*Cards for tasks - tasks.html*/
 .phrases {
   border: 1px solid black;
-  padding-left: 25px;
-}
-
-.description-text {
-  font-size: 14px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 60%;
+  padding-left: 30px;
 }
 
 /*Media Queries*/
