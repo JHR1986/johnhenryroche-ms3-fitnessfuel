@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Search Section - tasks.html-->
 <div class="card row">
     <div class="card-body">
         <form class="centre-card2" action="{{ url_for('search') }}" method="POST">
@@ -23,7 +24,9 @@
         </form>
     </div>
 </div>
+<!--End of Search Section - tasks.html-->
 
+<!--Tasks Section - tasks.html-->
 {% if tasks|length > 0 %}
 <div class="card row">
     {% for task in tasks %}
@@ -44,6 +47,6 @@
 {% else %}
 <h1>No Results Found</h1>
 {% endif %}
-
+<!--End of Tasks Section - tasks.html-->
 
 {% endblock %}
