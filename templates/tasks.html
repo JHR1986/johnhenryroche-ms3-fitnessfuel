@@ -36,7 +36,7 @@
         <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ task.category_name }}</h5>
         <h6><i class="far fa-comment-dots"></i> {{ task.english_name }}</h6>
         <h6><i class="far fa-comment-dots"></i> {{ task.korean_name }}</h6>
-        <p class="card-text description-text"><i class="fas fa-clipboard-list"></i> {{ task.brief_description }}</p>
+        <p class="card-text"><i class="fas fa-clipboard-list"></i> {{ task.brief_description }}</p>
         <h6>by: {{ task.created_by }}</h6>
         <div class="col-sm" id="thumbsup">
             <a href="{{ url_for('thumbs_up', task_id=task._id)}}">
