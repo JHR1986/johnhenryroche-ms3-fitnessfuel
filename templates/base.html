@@ -23,7 +23,9 @@
 
     <!-- Navigation Section - base.html -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/handykoreanphraseslogo5.png') }} " alt="Fitness Fuel Logo"></a>
+        <a class="navbar-brand" href="{{ url_for('home') }}"><img
+                src="{{ url_for('static', filename='images/handykoreanphraseslogo5.png') }} "
+                alt="Fitness Fuel Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,6 +60,7 @@
     </nav>
     <!--End of Navigation Section - base.html-->
 
+    <!--Flash Message Section - base.html-->
     <section>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -69,14 +72,14 @@
         {% endif %}
         {% endwith %}
     </section>
+    <!--End of Flash Message Section - base.html-->
 
-
-
-
+    <!--Container Section for Other HTML Pages - base.html-->
     <div class="container-fluid">
         {% block content %}
         {% endblock %}
     </div>
+    <!--End of Container Section for Other HTML Pages - base.html-->
 
     <!--Footer Section - base.html-->
     <footer class="footer footer-light bg-light mt-auto py-3">
@@ -89,7 +92,7 @@
                 </div>
                 <div class="col-lg-4 footer-text">
                     <p> <i class="far fa-building"></i>
-                      Dublin Office
+                        Dublin Office
                     </p>
                 </div>
                 <div class="col-lg-4 footer-text">
