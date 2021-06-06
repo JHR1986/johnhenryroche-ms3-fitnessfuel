@@ -138,6 +138,22 @@ def add_task():
         "add_task.html", categories=categories, page="add_task")
 
 
+# App route for like function
+@app.route("/thumbs_up/<task_id>", methods=["GET", "POST"])
+def thumbs_up(task_id):
+    task = mongo.db.tasks.find_one_and_update(
+        {"_id": ObjectId(task_id)}, {"$inc": {"thumbs_up": 1}})
+    return redirect(url_for("get_tasks", task=task))
+
+
+# App route for dislike function
+@app.route("/thumbs_down/<task_id>", methods=["GET", "POST"])
+def thumbs_down(task_id):
+    task = mongo.db.tasks.find_one_and_update(
+        {"_id": ObjectId(task_id)}, {"$inc": {"thumbs_down": 1}})
+    return redirect(url_for("get_tasks", task=task))
+
+
 # App route for edit task page
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
