@@ -152,6 +152,10 @@ footer .row {
   width: 100%;
 }
 
+.taskbackground {
+  background-color: #3358D4;
+}
+
 /*End of Background hero images*/
 
 /*Flash Messages - all pages*/
