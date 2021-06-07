@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Form Section - edit_phrase.html-->
+<body class="edittask-heroimage">
+    <div class="row">
+        <form method="POST" action="{{ url_for('edit_phrase', phrase_id=phrase._id) }}" class="centre-card needs-validation"
+            novalidate>
+            <div class="card card-styling">
+                <h3 class="mt-2 mb-2 centre-text title-text">Edit Phrase</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <select id="category_name" class="form-control green-text" name="category_name" required>
+                                <option value="" disabled>Choose Category</option>
+                                {% for category in categories %}
+                                {% if category.category_name == phrase.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}
+                                </option>
+                                {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="category_name"><i class="fas fa-clipboard-list"></i> Phrase Category</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="english_name" name="english_name"
+                                minlength="5" maxlength="50" value="{{ phrase.english_name }}" placeholder="English Phrase"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter English phrase.
+                            </div>
+                            <label for="english_name"><i class="fas fa-language"></i> English Phrase</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="korean_name" name="korean_name"
+                                minlength="5" maxlength="50" value="{{ phrase.korean_name }}" placeholder="Korean Phrase"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter Korean phrase.
+                            </div>
+                            <label for="korean_name"><i class="fas fa-language"></i> Korean Phrase</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="brief_description"
+                                name="brief_description" minlength="5" maxlength="200"
+                                value="{{ phrase.brief_description }}" placeholder="Fun Fact about Korea" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a fun fact about Korea
+                            </div>
+                            <label for="brief_description"><i class="far fa-file-alt"></i> Fun Fact about
+                                Korea?</label>
+                        </div>
+                    </div>
+                    <!-- Submit Button - edit_phrase.html -->
+                    <button type="submit" class="btn btn-primary button">Edit Phrase</button>
+                    <!-- Cancel Phrase Button - edit_phrase.html -->
+                    <a class="btn btn-primary button-red" href="{{ url_for('get_phrases') }}" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<!--End of Form Section - edit_phrase.html-->
+
+{% endblock %}
