@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Search Section - phrases.html-->
+<div class="card searchbackground">
+    <div class="card-body search">
+        <form class="centre-card2 pt-1 pb-1" action="{{ url_for('search') }}" method="POST">
+            <div class="card card-styling">
+                <div class="card-body">
+                    <div class="row">
+                        <label class="centre-text" for="query">
+                            <h4 class="title-text">Search</h4>
+                        </label>
+                        <div class="input-group">
+                            <input class="centre-text" type="text" name="query" id="query" minlength="3" aria-label="search"
+                                aria-describedby="search box" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12-lg centre-text pt-1 pb-1">
+                        <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_phrases') }}"
+                            role="button">Reset</a>
+                        <button class="btn btn-primary button-margin button" type="submit">Search</button>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--End of Search Section - phrases.html-->
+
+<!--Phrases Section - phrases.html-->
+{% if phrases|length > 0 %}
+<div class="card taskbackground">
+    {% for phrase in phrases %}
+    <div class="card-body phrases">
+        <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ phrase.category_name }}</h5>
+        <h6><i class="far fa-comment-dots"></i> {{ phrase.english_name }}</h6>
+        <h6><i class="far fa-comment-dots"></i> {{ phrase.korean_name }}</h6>
+        <p class="card-text"><i class="fas fa-clipboard-list"></i> {{ phrase.brief_description }}</p>
+        <h6>by: {{ phrase.created_by }}</h6>
+        {% if session.user|lower == phrase.created_by|lower %}
+        <a class="btn btn-primary button-red" href="{{ url_for('delete_phrase', phrase_id=phrase._id) }}"
+            role="button">Delete</a>
+        <a class="btn btn-primary button" href="{{ url_for('edit_phrase', phrase_id=phrase._id) }}" role="button">Edit</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h1>No Results Found</h1>
+{% endif %}
+<!--End of Phrases Section - phrases.html-->
+
+{% endblock %}
