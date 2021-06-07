@@ -38,11 +38,11 @@
                 <li class="nav-item {{ 'active' if page == 'profile' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                 </li>
-                <li class="nav-item {{ 'active' if page == 'get_tasks' else ' ' }}">
-                    <a class="nav-link" href="{{ url_for('get_tasks') }}">Phrases</a>
+                <li class="nav-item {{ 'active' if page == 'get_phrases' else ' ' }}">
+                    <a class="nav-link" href="{{ url_for('get_phrases') }}">Phrases</a>
                 </li>
-                <li class="nav-item {{ 'active' if page == 'add_task' else ' ' }}">
-                    <a class="nav-link" href="{{ url_for('add_task') }}">New Phrase</a>
+                <li class="nav-item {{ 'active' if page == 'add_phrases' else ' ' }}">
+                    <a class="nav-link" href="{{ url_for('add_phrase') }}">New Phrase</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
@@ -51,8 +51,8 @@
                 <li class="nav-item {{ 'active' if page == 'home' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                 </li>
-                <li class="nav-item {{ 'active' if page == 'get_tasks' else ' ' }}">
-                    <a class="nav-link" href="{{ url_for('get_tasks') }}">Phrases</a>
+                <li class="nav-item {{ 'active' if page == 'get_phrases' else ' ' }}">
+                    <a class="nav-link" href="{{ url_for('get_phrases') }}">Phrases</a>
                 </li>
                 <li class="nav-item {{ 'active' if page == 'login' else ' ' }}">
                     <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
