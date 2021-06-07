@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Form Section - add_phrase.html-->
+<body class="addtask-heroimage">
+    <div class="row">
+        <form method="POST" action="{{ url_for('add_phrase') }}" class="centre-card needs-validation" novalidate>
+            <div class="card card-styling">
+                <h3 class="mt-2 mb-2 centre-text title-text">Add New Phrase</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <select id="category_name" class="form-control green-text" name="category_name" required>
+                                <option value="" disabled selected>Choose Category</option>
+                                {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please choose category.
+                            </div>
+                            <label for="category_name">
+                                <h5><i class="fas fa-clipboard-list"></i> Phrase Category</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="english_name" name="english_name"
+                                minlength="5" maxlength="50" placeholder="English Phrase" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter English phrase
+                            </div>
+                            <label for="english_name">
+                                <h5><i class="fas fa-language"></i> English Phrase</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="korean_name" name="korean_name"
+                                minlength="5" maxlength="50" placeholder="Korean Phrase" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter Korean phrase.
+                            </div>
+                            <label for="korean_name">
+                                <h5><i class="fas fa-language"></i> Korean Phrase</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group input-area">
+                            <input type="text" class="form-control green-text" id="brief_description"
+                                name="brief_description" minlength="5" maxlength="200" placeholder="Fun Fact about Korea"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a fun fact about Korea.
+                            </div>
+                            <label for="brief_description">
+                                <h5><i class="far fa-file-alt"></i> Fun Fact about Korea?</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Submit Button - add_phrase.html -->
+                    <button type="submit" class="btn btn-primary button">Add Phrase</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<!--End of Form Section - add_phrase.html-->
+
+{% endblock %}
