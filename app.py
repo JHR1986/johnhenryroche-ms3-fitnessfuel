@@ -25,18 +25,18 @@ def home():
 
 
 # App route for phrases page
-@app.route("/get_tasks")
-def get_tasks():
-    tasks = list(mongo.db.tasks.find())
-    return render_template("tasks.html", tasks=tasks, page="get_tasks")
+@app.route("/get_phrases")
+def get_phrases():
+    phrases = list(mongo.db.phrases.find())
+    return render_template("phrases.html", phrases=phrases, page="get_phrases")
 
 
 # App route for search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("tasks.html", tasks=tasks)
+    phrases = list(mongo.db.phrases.find({"$text": {"$search": query}}))
+    return render_template("phrases.html", phrases=phrases)
 
 
 # App route for register
@@ -118,45 +118,29 @@ def logout():
     return redirect(url_for("login"))
 
 
-# App route for add task page
-@app.route("/add_task", methods=["GET", "POST"])
-def add_task():
+# App route for add phrase page
+@app.route("/add_phrase", methods=["GET", "POST"])
+def add_phrase():
     if request.method == "POST":
-        task = {
+        phrase = {
             "category_name": request.form.get("category_name"),
             "english_name": request.form.get("english_name"),
             "korean_name": request.form.get("korean_name"),
             "brief_description": request.form.get("brief_description"),
             "created_by": session["user"],
         }
-        mongo.db.tasks.insert_one(task)
+        mongo.db.phrases.insert_one(phrase)
         flash("Phrase Successfully Added!")
-        return redirect(url_for("get_tasks"))
+        return redirect(url_for("get_phrases"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
-        "add_task.html", categories=categories, page="add_task")
+        "add_phrase.html", categories=categories, page="add_phrase")
 
 
-# App route for like function
-@app.route("/thumbs_up/<task_id>", methods=["GET", "POST"])
-def thumbs_up(task_id):
-    task = mongo.db.tasks.find_one_and_update(
-        {"_id": ObjectId(task_id)}, {"$inc": {"thumbs_up": 1}})
-    return redirect(url_for("get_tasks", task=task))
-
-
-# App route for dislike function
-@app.route("/thumbs_down/<task_id>", methods=["GET", "POST"])
-def thumbs_down(task_id):
-    task = mongo.db.tasks.find_one_and_update(
-        {"_id": ObjectId(task_id)}, {"$inc": {"thumbs_down": 1}})
-    return redirect(url_for("get_tasks", task=task))
-
-
-# App route for edit task page
-@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
-def edit_task(task_id):
+# App route for edit phrase page
+@app.route("/edit_phrase/<phrase_id>", methods=["GET", "POST"])
+def edit_phrase(phrase_id):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -165,20 +149,20 @@ def edit_task(task_id):
             "brief_description": request.form.get("brief_description"),
             "created_by": session["user"],
         }
-        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        mongo.db.phrases.update({"_id": ObjectId(phrase_id)}, submit)
         flash("Phrase Successfully Updated!")
 
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    phrase = mongo.db.phrases.find_one({"_id": ObjectId(phrase_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_task.html", task=task, categories=categories)
+    return render_template("edit_phrase.html", phrase=phrase, categories=categories)
 
 
-# App route for delete task function
-@app.route("/delete_task/<task_id>")
-def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+# App route for delete phrase function
+@app.route("/delete_phrase/<phrase_id>")
+def delete_phrase(phrase_id):
+    mongo.db.phrases.remove({"_id": ObjectId(phrase_id)})
     flash("Phrase Successfully Deleted!")
-    return redirect(url_for("get_tasks"))
+    return redirect(url_for("get_phrases"))
 
 
 # Renders a 404 error
