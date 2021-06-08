@@ -12,8 +12,8 @@
                             <h4 class="title-text">Search</h4>
                         </label>
                         <div class="input-group">
-                            <input class="centre-text" type="text" name="query" id="query" minlength="3" aria-label="search"
-                                aria-describedby="search box" required>
+                            <input class="centre-text" type="text" name="query" id="query" minlength="3"  aria-label="search"
+                                size="40" aria-describedby="search box" required>
                         </div>
                     </div>
                     <div class="row">
@@ -32,7 +32,7 @@
 
 <!--Phrases Section - phrases.html-->
 {% if phrases|length > 0 %}
-<div class="card taskbackground">
+<div class="card phrasebackground">
     {% for phrase in phrases %}
     <div class="card-body phrases">
         <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ phrase.category_name }}</h5>
@@ -48,8 +48,10 @@
     </div>
     {% endfor %}
 </div>
-{% else %}
-<h1>No Results Found</h1>
+{% else %}  
+<h1 class="flash-message">No Results Found!</h1>
+<h2 class="search-confirmation">Please enter English or Korean Phrase!</h2>
+<img class="results-image" src="static/images/optimisedloginimage.jpg" alt="Books on a table">
 {% endif %}
 <!--End of Phrases Section - phrases.html-->
 
