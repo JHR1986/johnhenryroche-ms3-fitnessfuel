@@ -9,11 +9,11 @@
                 <div class="card-body">
                     <div class="row">
                         <label class="centre-text" for="query">
-                            <h4 class="title-text">Search</h4>
+                            <div class="title-text pb-2">Search</div>
                         </label>
                         <div class="input-group">
-                            <input class="centre-text" type="text" name="query" id="query" minlength="3"  aria-label="search"
-                                size="40" aria-describedby="search box" required>
+                            <input class="centre-text green-text" type="text" name="query" id="query" minlength="5" maxlength="50"  aria-label="search"
+                                size="40" required>
                         </div>
                     </div>
                     <div class="row">
@@ -50,7 +50,7 @@
 </div>
 {% else %}  
 <h1 class="flash-message">No Results Found!</h1>
-<h2 class="search-confirmation">Please enter English or Korean Phrase!</h2>
+<h2 class="search-confirmation">Please enter valid English or Korean Phrase!</h2>
 <img class="results-image" src="static/images/optimisedloginimage.jpg" alt="Books on a table">
 {% endif %}
 <!--End of Phrases Section - phrases.html-->
