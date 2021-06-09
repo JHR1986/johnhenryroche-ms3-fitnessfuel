@@ -2,10 +2,13 @@
 {% block content %}
 
 <!--Start of Error Message - 500.html-->
+<!--I studied a comment by Ed Bradley (Ed B) on Code Institute's Slack channel 
+    in respect of how to correctly set up the 404 & 500 error pages for Python and Flask. - see Readme-->
 <div>
     <h1>500 Error</h1>
     <p>Something went wrong.</p>
     <a href="{{ url_for('home') }}" class="btn btn-primary button-red">Return To Home Page</a>
+    <img class="results-image" src="static/images/optimisedloginimage.jpg" alt="Books on a table">
 </div>
 <!--End of Error Message - 500.html-->
 
