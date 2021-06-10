@@ -98,7 +98,13 @@ I also created an Index relating to searches for English and Korean phrases in t
 
 The code for this project relating to interaction with the MongoDB database is outlined below;
 1. Getting the list of phrases saved to database:
-![mongo8](https://user-images.githubusercontent.com/71781554/121540381-57644f80-c9fe-11eb-8eb8-c1d559d61dff.png)
+```
+# App route for phrases page
+@app.route("/get_phrases")
+def get_phrases():
+    phrases = list(mongo.db.phrases.find())
+    return render_template("phrases.html", phrases=phrases, page="get_phrases")
+```
 2. Searching for English or Korean phrase:
 ![mongo1](https://user-images.githubusercontent.com/71781554/121538485-ba54e700-c9fc-11eb-92c5-930016ab485d.png)
 3. Checking if username already exists in database:
