@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <div class="row">
                         <label for="query">
-                            <div class="title-text pl-2 pb-2">Search Phrases</div>
+                            <div class="title-text pl-2 pb-2"><i class="fas fa-search"></i> Search Phrases</div>
                         </label>
                         <div class="input-group pl-2 pt-1 pb-1">
                             <input class="green-text" type="text" name="query" id="query" minlength="5" maxlength="50"
@@ -48,7 +48,7 @@
     <div class="card-body phrases">
         <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ phrase.category_name }}</h5>
         <h6><i class="far fa-comment-dots"></i> {{ phrase.english_name }}</h6>
-        <h6><i class="far fa-comment-dots"></i> {{ phrase.korean_name }}</h6>
+        <h6 class="korean-text"><i class="far fa-comment-dots"></i> {{ phrase.korean_name }}</h6>
         <p class="card-text"><i class="fas fa-clipboard-list"></i> {{ phrase.brief_description }}</p>
         <h6>by: {{ phrase.created_by }}</h6>
         {% if session.user|lower == phrase.created_by|lower %}
