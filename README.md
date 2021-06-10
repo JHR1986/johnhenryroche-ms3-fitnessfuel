@@ -12,6 +12,7 @@
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
 - [Features](#features)
+- [Database Design](#database-design)
 - [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
   * [Frameworks and Libraries and Programs Used](#frameworks-and-libraries-and-programs-used)
@@ -87,6 +88,32 @@ Photo of Site Represented on Various Media to highlight responsive design:
     - Add Task Page: Main background hero image with an add phrase box in the centre where users can enter their phrase category, english phrase, Korean phrase and fun fact about Korean, and press an add phrase button below.
     - Edit Task Page: Main background hero image with an edit phrase box in the centre where users can edit their phrase category, english phrase, Korean phrase and fun fact about Korea, and press either the edit phrase or cancel buttons below.
 
+## Database Design
+
+- I used MongoDB as the database for this project, and the plan of the database (which I named task_manager) is detailed below;
+
+![database](https://user-images.githubusercontent.com/71781554/121535833-68ab5d00-c9fa-11eb-9975-c53963210520.png)
+
+I also created an Index relating to searches for English and Korean phrases in the Phrases html page.
+
+The code for this project relating to interaction with the MongoDB database is outlined below;
+1. Getting the list of phrases saved to database:
+![mongo8](https://user-images.githubusercontent.com/71781554/121540381-57644f80-c9fe-11eb-8eb8-c1d559d61dff.png)
+2. Searching for English or Korean phrase:
+![mongo1](https://user-images.githubusercontent.com/71781554/121538485-ba54e700-c9fc-11eb-92c5-930016ab485d.png)
+3. Checking if username already exists in database:
+![mongo2](https://user-images.githubusercontent.com/71781554/121538631-d8224c00-c9fc-11eb-93fc-bb148ee9465e.png)
+4. Checking if username already exists in respect of login page:
+![mongo3](https://user-images.githubusercontent.com/71781554/121539015-2e8f8a80-c9fd-11eb-9440-974379f4f6ad.png)
+5. Grabbing username from database for login to profile page:
+![mongo4](https://user-images.githubusercontent.com/71781554/121539238-64cd0a00-c9fd-11eb-91bd-1512f5106a80.png)
+6. Adding new phrase to database:
+![mongo5](https://user-images.githubusercontent.com/71781554/121539449-9940c600-c9fd-11eb-9863-b83052ed2561.png)
+7. Editing phrase in database:
+![mongo6](https://user-images.githubusercontent.com/71781554/121539562-afe71d00-c9fd-11eb-8470-622997a2bdd8.png)
+8. Deleting phrase from database:
+![mongo7](https://user-images.githubusercontent.com/71781554/121539654-c55c4700-c9fd-11eb-9bc7-9513ce878aef.png)
+
 ## Technologies Used
 
 ### Languages Used
@@ -120,98 +147,118 @@ Photo of Site Represented on Various Media to highlight responsive design:
 - Testing information for this project can be found in the separate Testing File [here](testing.md). 
 
 ## Deployment
-### How to run this project locally
+### Database Deployment
+### Application Hosting
+### Heroku
 
-To run this project on your own IDE follow the instructions below:
+The website is hosted using Heroku and is deployed directly from the master branch of GitHub. The deployed site updates automatically as new commits are pushed to the master branch.
 
-Ensure you have the following tools:
+Creating a Heroku app:
+- From the Heroku dashboard select "New" and then select "Create new app"
 
-- An IDE such as Visual Studio Code
+- Add new app details to form:
+  - Add an app name (this name must be unique)
+  - Select your region
+  - Click "Create App"
 
-The following must be installed on your machine:
+Setting Environmental Variables:
+- From the Heroku dashboard:
+  - Select your newly created app from the list
+- Select "Settings" from the top menu:
+  - Under 'Config Vars', select "Reveal Config Vars"
+  - Add your environment variables in key-value pairs, and then click "Add" to add additional pairings.
 
-- PIP
-- Python 3
-- Git
-- An account at MongoDB Atlas or MongoDB running locally on your machine.
-    - How to set up your Mongo Atlas account [here](https://docs.mongodb.com/manual/tutorial/getting-started/).
+Deployment:
+- Create the following required deployment files in the repository:
+  - requirements.txt: This file lists the required python modules for Heroku to install. In order to create this file, type: pip freeze > requirements.txt in your IDE terminal.
+  - Procfile: This file tells Heroku the command to launch the app. In order to create this file, type: python app.py > Procfile in your IDE terminal. 
+  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignores. To create this file, type: touch .gitignore in your IDE terminal type. This lists the files and directories to be excluded from live deployment, within the .gitignore file. Save this file to your repository root directory.
 
-#### Instructions
-1. Save a copy of the github repository located at https://github.com/JHR1986/johnhenryroche-ms3-handykoreanphrases by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
+From the application top menu:
+  - Select 'Deploy'
+  - Choose your Deployment method:
+    - Github: Select the correct Github account. Type in the repository name that you wish to deploy. Choose the correct repository from search results and then select "Connect".
+    - Manual Deployment: Choose the correct branch you wish to deploy from the drop-down. Select "Deploy Branch" and Heroku will then return "Your App has successfully deployed". 
 
-`git clone https://github.com/JHR1986/johnhenryroche-ms3-handykoreanphrases`
+Automatic Deployment
+  - From the application top menu, select 'Deploy' and ensure that the app is connected to the correct repository. Under the 'Automatic Deployment' section, select 'Enable Automatic Deployment". 
 
-2. If possible open a terminal session in the unzip folder or cd to the correct location.
-3. A virtual environment is recommended for the Python interpreter. I recommend using Pythons built in virtual environment. Enter the command:
+### GitHub and GitPod Repository Management
 
-`python -m .venv venv`
+### How to clone 'Handy Korean Phrases' in GitHub, GitPod and setup on Heroku.
 
-NOTE: Your Python command may differ, such as python3 or py.
+To run a version of the site locally, you can clone this repository using the following steps;
 
-4. Activate the .venv with the command:
-`.venv\Scripts\activate`
+In a code editor of your choice;
 
-Again this command may differ depending on your operating system, please check the Python Documentation on virtual environments for further instructions.
+1. Go to GitHub.com
+2. Click on 'Repositories'
+3. Click on 'Handy Korean Phrases'
+4. Click on the 'Code' button.
+5. Under 'HTTPS' click the clipboard icon to the right of the URL.
+6. In your IDE of choice, open a repository or create a new repository.
+7. Open Terminal ('Terminal' then 'New Terminal' from the top ribbon menu in GitPod.)
+8. Type 'git clone', paste the URL link and press enter.
 
-5. If needed, Upgrade pip locally with
+Additional information around these cloning steps can be found on GitHub Pages Help Page.  
 
-`pip install --upgrade pip.`
+### Installing Requirements
 
-6. Install all required modules with the command
+- Install all requirements modules to your local IDE with the following CL:
 
-`pip -r requirements.txt.`
+`pip3 install -r requirements.txt`
 
-7. In your local IDE create a file called `.flaskenv.`
+### Create Collections in MongoDB
 
-Inside the .flaskenv file, create a SECRET_KEY variable and a MONGO_URI to link to your own database. Please make sure to call your database task_manager, with 3 collections called users, phrases and categories. You will find the structures of these collections in the features section above.
+- Login to your MongoDB account
+- Create a Cluster and then create a database using the information contained in the Database Design section of this Readme file.
 
-You can now run the application with the command
+### Setup Environmental Variables
 
-`python app.py`
+- Create a '.gitignore' file in the root directoy.
+- Add 'env.py' and 'pycache/' to the file list within the gitignore file. 
+- Create an 'env.py' file and in the 'env.py' file write the following code lines;
 
-You can visit the website at http://127.0.0.1:5000
+```
+import os
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "[UNIQUE ID]")
+os.environ.setdefault("MONGO_URI", "[UNIQUE ID]") 
+os.environ.setdefault("MONGO_DBNAME", "[UNIQUE ID]")
+```
 
-### Heroku Deployment
-To deploy Handy Korean Phrases to Heroku, take the following steps:
+Note: For each section noted as [UNIQUE ID], you will need to provide your own unique identifier. These must also be aligned to Heroku environmental variables.
 
-1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
-2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile.`
-3. `git add` and `git commit` the new requirements and Procfile and then git push the project to GitHub.
-4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
-5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
-6. Confirm the linking of the heroku app to the correct GitHub repository.
-7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+### Setup Unique Identifies / Environment Variables
 
-Set the following config vars:
-![heroku](https://user-images.githubusercontent.com/71781554/121223709-b8194e00-c87f-11eb-8ce4-b2f348c1dedc.png)
+#### SECRET_KEY
+This is required when using flash() and session() functions in flask. The key can be whatever you want, but it is generally advisable to use a randomly generated secure key.
 
-To get your MONGO_URI read the MongoDB Atlas documentation [here](https://docs.mongodb.com/manual/reference/connection-string/)
+#### MONGO_URI
+The Mongo URI is used to connect your application to your MongoDB cluster.
 
-8. In the heroku dashboard, click "Deploy".
-9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
-10. The site is now successfully deployed.
+- Click the 'Overview' tab from your Cluster, followed by 'Connect'.
+- Select 'Connect your application'.
+- Select your correct version of Python and copy the connection string.
+- Replace the 'username' and 'password' text, with the relevant criteria you setup in 'Database Access'.
 
-### Forking the GitHub Repository
-By forking the GitHub Repository, this enables you to make a copy of the original Repository on the GitHub account to view and/or make changes without affecting the original repository;
-1.  Log in to GitHub and locate the GitHub Repository which contains the project.
-2.  At the top of the Repository (as opposed to the top of page) just above the "Settings" Button on the menu, locate and then select the "Fork" Button.
-3.  You should now have a copy of the original Repository in your GitHub account which you can inspect.
+#### MONGO_DBNAME
+This is the name of your database in MongoDB. This can be foung under the 'Collections' tab, which is located under your cluster.
 
-### Making a Local Clone
-1.  Log in to your GitHub account and locate the GitHub Repository which contains the project.
-2.  Under the Repository name, click "Clone or download".
-3.  If you wish to clone the Repository using HTTPS, you should copy the link under "Clone with HTTPS".
-4.  Proceed to open your preferred terminal.
-5.  Change the current working directory to the location where you want the cloned directory to be made.
-6.  Type git clone, and then paste the URL you copied from the link that is detailed in Step 3 above.
-7.  ```$ git clone https://github.com/USERNAME/REPOSITORY```
-8.  Press Enter and your local clone will then be created and available to be inspected and reviewed.
+Running Development Server
+
+To launch a Http server using the development mode code for the application, use the following command in your IDE:
+
+`python3 app.py http.server`
+
+The IDE will then open a port for you to access the site.
 
 ## Credits
 ### Code
 - [Change input field to green when correct number of characters entered](https://stackoverflow.com/questions/39540302/how-to-change-the-background-color-of-an-input-field-when-text-is-entered): I studied this post in order to fully understand how to change the input field green when a correct number of characters had been entered, to assist with the validation process.
 - [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and applied it to my project. 
-- [Show active page when using Flask and Jinja](https://stackoverflow.com/questions/55895502/dynamically-setting-active-class-with-flask-and-jinja2) I wished to ensure that the page currently clicked on was underlined as active in the Navbar. To achieve this while using flask, I followed the instructions listed in this Stackoverflow post. 
+- [Show active page when using Flask and Jinja](https://stackoverflow.com/questions/55895502/dynamically-setting-active-class-with-flask-and-jinja2): I wished to ensure that the page currently clicked on was underlined as active in the Navbar. To achieve this while using flask, I followed the instructions listed in this Stackoverflow post. 
 - I studied a comment by Ed Bradley (Ed B) on Code Institute's Slack channel in respect of how to correctly set up the 404 & 500 error pages for Python and Flask.
 - I used the Bootstrap Library throughout the project to make the site more responsive through using the Bootstrap Grid System and employing Bootstrap elements for the Navbar, Footer, Jumbotron, Cards and Forms.
 - I studied the videos for the Code Institute mini project presented by Tim Nelson prior to starting my website, in order to get a good understanding of how both Flask and MongoDB operate, and how to implement a CRUD system.
