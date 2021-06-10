@@ -4,24 +4,35 @@
 <!--Search Section - phrases.html-->
 <div class="card searchbackground">
     <div class="card-body search">
-        <form class="centre-card2 pt-1 pb-1" action="{{ url_for('search') }}" method="POST">
+        <form class="centre-card2 pt-1 pb-1 needs-validation" action="{{ url_for('search') }}" novalidate method="POST">
             <div class="card card-styling">
                 <div class="card-body">
                     <div class="row">
-                        <label class="centre-text" for="query">
-                            <div class="title-text pb-2">Search</div>
+                        <label for="query">
+                            <div class="title-text pl-2 pb-2">Search Phrases</div>
                         </label>
-                        <div class="input-group">
-                            <input class="centre-text green-text" type="text" name="query" id="query" minlength="5" maxlength="50"  aria-label="search"
-                                size="40" required>
+                        <div class="input-group pl-2 pt-1 pb-1">
+                            <input class="green-text" type="text" name="query" id="query" minlength="5" maxlength="50"
+                                aria-label="search" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback textp">
+                                Please enter valid phrase!
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12-lg centre-text pt-1 pb-1">
-                        <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_phrases') }}"
-                            role="button">Reset</a>
-                        <button class="btn btn-primary button-margin button" type="submit">Search</button>
-                        </div>    
+                        <div class="col-12-lg pl-2 pt-1 pb-2">
+                            <a class="btn btn-primary button-margin button-red" href="{{ url_for('get_phrases') }}"
+                                role="button">Reset</a>
+                            <button class="btn btn-primary button-margin button" type="submit">Search</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12-lg pl-2 pt-2 pb-1">
+                            <div>Get Learning New Korean Phrases Now!</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,12 +54,13 @@
         {% if session.user|lower == phrase.created_by|lower %}
         <a class="btn btn-primary button-red" href="{{ url_for('delete_phrase', phrase_id=phrase._id) }}"
             role="button">Delete</a>
-        <a class="btn btn-primary button" href="{{ url_for('edit_phrase', phrase_id=phrase._id) }}" role="button">Edit</a>
+        <a class="btn btn-primary button" href="{{ url_for('edit_phrase', phrase_id=phrase._id) }}"
+            role="button">Edit</a>
         {% endif %}
     </div>
     {% endfor %}
 </div>
-{% else %}  
+{% else %}
 <h1 class="flash-message">No Results Found!</h1>
 <h2 class="search-confirmation">Please enter valid English or Korean Phrase!</h2>
 <img class="results-image" src="static/images/optimisedloginimage.jpg" alt="Books on a table">
