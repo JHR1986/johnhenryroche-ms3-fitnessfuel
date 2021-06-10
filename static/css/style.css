@@ -185,7 +185,7 @@ footer .row {
   border-width: small;
   color: #ffffff;
   border-color: #3358D4;
-  background-color: rgb(245, 9, 9);
+  background-color: rgb(212, 2, 2);
   border-radius: 25%;
 }
 
@@ -218,7 +218,7 @@ footer .row {
   background-color: white;
 }
 
-/*Search section - phrases.html*/
+/*Search section and card section - phrases.html*/
 .searchbackground {
   background-color: #F0FFF0;
 }
@@ -242,6 +242,10 @@ footer .row {
   height: 100%;
   width: 100%;
   border: 1px solid #000000;
+}
+
+.korean-text {
+  color: #3358D4;
 }
 
 /*Profile section - profile.html*/
