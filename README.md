@@ -106,20 +106,101 @@ def get_phrases():
     return render_template("phrases.html", phrases=phrases, page="get_phrases")
 ```
 2. Searching for English or Korean phrase:
-![mongo1](https://user-images.githubusercontent.com/71781554/121538485-ba54e700-c9fc-11eb-92c5-930016ab485d.png)
+```
+# App route for search function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    phrases = list(mongo.db.phrases.find({"$text": {"$search": query}}))
+    return render_template("phrases.html", phrases=phrases)
+```
 3. Checking if username already exists in database:
-![mongo2](https://user-images.githubusercontent.com/71781554/121538631-d8224c00-c9fc-11eb-93fc-bb148ee9465e.png)
+```
+# App route for register
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # Check if the username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()}
+        )
+```
 4. Checking if username already exists in respect of login page:
-![mongo3](https://user-images.githubusercontent.com/71781554/121539015-2e8f8a80-c9fd-11eb-9440-974379f4f6ad.png)
+```
+# App route for login page
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # Check if the username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()}
+        )
+```
 5. Grabbing username from database for login to profile page:
-![mongo4](https://user-images.githubusercontent.com/71781554/121539238-64cd0a00-c9fd-11eb-91bd-1512f5106a80.png)
-6. Adding new phrase to database:
-![mongo5](https://user-images.githubusercontent.com/71781554/121539449-9940c600-c9fd-11eb-9863-b83052ed2561.png)
-7. Editing phrase in database:
-![mongo6](https://user-images.githubusercontent.com/71781554/121539562-afe71d00-c9fd-11eb-8470-622997a2bdd8.png)
-8. Deleting phrase from database:
-![mongo7](https://user-images.githubusercontent.com/71781554/121539654-c55c4700-c9fd-11eb-9bc7-9513ce878aef.png)
+```
+# App route for profile page
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Grab the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username, page="profile")
+
+    return redirect(url_for("login"))
+```
+6. Adding new phrase to database:
+```
+# App route for add phrase page
+@app.route("/add_phrase", methods=["GET", "POST"])
+def add_phrase():
+    if request.method == "POST":
+        phrase = {
+            "category_name": request.form.get("category_name"),
+            "english_name": request.form.get("english_name"),
+            "korean_name": request.form.get("korean_name"),
+            "brief_description": request.form.get("brief_description"),
+            "created_by": session["user"],
+        }
+        mongo.db.phrases.insert_one(phrase)
+        flash("Phrase Successfully Added!")
+        return redirect(url_for("get_phrases"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "add_phrase.html", categories=categories, page="add_phrase")
+```
+7. Editing phrase in database:
+```
+# App route for edit phrase page
+@app.route("/edit_phrase/<phrase_id>", methods=["GET", "POST"])
+def edit_phrase(phrase_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "english_name": request.form.get("english_name"),
+            "korean_name": request.form.get("korean_name"),
+            "brief_description": request.form.get("brief_description"),
+            "created_by": session["user"],
+        }
+        mongo.db.phrases.update({"_id": ObjectId(phrase_id)}, submit)
+        flash("Phrase Successfully Updated!")
+
+    phrase = mongo.db.phrases.find_one({"_id": ObjectId(phrase_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_phrase.html", phrase=phrase, categories=categories)
+```
+8. Deleting phrase from database:
+```
+# App route for delete phrase function
+@app.route("/delete_phrase/<phrase_id>")
+def delete_phrase(phrase_id):
+    mongo.db.phrases.remove({"_id": ObjectId(phrase_id)})
+    flash("Phrase Successfully Deleted!")
+    return redirect(url_for("get_phrases"))
+```
 ## Technologies Used
 
 ### Languages Used
