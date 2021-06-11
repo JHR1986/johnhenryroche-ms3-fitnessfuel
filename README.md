@@ -36,7 +36,7 @@ In respect of the overall construction of this website, it has been designed to 
 
 Photo of Site Represented on Various Media to highlight responsive design:
 
-![responsivephoto](https://user-images.githubusercontent.com/71781554/121212704-7e434a00-c875-11eb-991b-1672243efc7c.png)
+![responsive](https://user-images.githubusercontent.com/71781554/121665154-23416b00-caa0-11eb-9bec-1a12e464fbfd.png)
 
 ## User Experience 
 
@@ -44,7 +44,7 @@ Photo of Site Represented on Various Media to highlight responsive design:
 
 ### First Time Visitor Goals
 1.  As a First Time Visitor, I want to quickly establish what information the website contains in respect of English speakers learning easy to use Korean phrases.
-2.  As a First Time Visitor, I want to be able to easily navigate throughout the site pages and be able to find and search for Korean phrases for use when I visit the country.
+2.  As a First Time Visitor, I want to be able to easily navigate throughout the site pages and be able to find and search for Korean phrases to use when I visit the country.
 3.  As a First Time Visitor, I want to be able to go to the register page and create my own account.
 
 ### Returning Visitor Goals
@@ -58,19 +58,22 @@ Photo of Site Represented on Various Media to highlight responsive design:
 ## Design
 
 ### Colour Scheme
-- In line with the Bootstrap Light theme that I used for the Navbar and Footer, I used various green and blue colours to match the design of the logo that I created for the site, while also using grey and white background colours to match the overall bootstrap theme. I ensured that these colours contrasted well and would result in good readability and accessibility for the user, which I checked was in order on Google Lighthouse. 
+- In line with the Bootstrap Light theme that I used for the Navbar and Footer, I used various green and blue colours to match the design of the logo that I created for the site, while also using grey and white background colours to match the overall bootstrap theme. I also used a dark red colour for the Reset and Cancel buttons (see colour chart below). I ensured that these colours contrasted well and would result in good readability and accessibility for the user, which I confirmed was in order through completing detailed testing on Google Lighthouse.
+
 - The colours that I used for the website are detailed in the colour chart below which I prepared on coolors.co;
 
-![colorpalette](https://user-images.githubusercontent.com/71781554/121214408-037b2e80-c877-11eb-8dd1-3b4e8f136ef6.png)
+![coolors](https://user-images.githubusercontent.com/71781554/121667498-3fdea280-caa2-11eb-8fde-d9c1e6fc474c.png)
 
 ### Typography
 - The PT Sans font (which I downloaded from Google Fonts) is the main font used throughout the whole website, with Sans Serif as the fallback font in case for any reason the PT Sans font fails to be imported correctly.
 - As per its description on the Google Fonts website, PT Sans is based on Russian sans serif types of the second part of the 20th century, but at the same time has distinctive features of contemporary humanistic designs. It was designed by Alexandra Korolkova, Olga Umpeleva and Vladimir Yefimov and released by ParaType in 2009.
 
 ### Imagery
-- The imagery within the website is utilised as a means to highlight the culture of Korea, as well as the beautiful architecture and scenic views that the country has to offer. I used large detailed hero images for the login and registration pages to add more colour to the site, while the home page has images of books and a person typing to highlight the educational aspect of the site, and an image of an iphone to represent the users ability to login and register to the site. 
+- The imagery within the website is utilised as a means to highlight the culture of Korea, as well as the beautiful architecture and scenic views that the country has to offer. I used large detailed background hero images for the login, registration, error (404 & 500) and profile pages to add more colour to the site, while the home page has images of books and a person typing to highlight the educational aspect of the site, and an image of an iphone to represent the users ability to login and register to the site. Examples of the images used in the site are detailed below; 
 
-![homeimages](https://user-images.githubusercontent.com/71781554/121215760-3245d480-c878-11eb-8b8a-db0fb4cb1818.png)
+![homepageimages](https://user-images.githubusercontent.com/71781554/121673393-bd0d1600-caa8-11eb-8270-5b0d042b07ad.png)
+
+![homepageimages2](https://user-images.githubusercontent.com/71781554/121673457-cc8c5f00-caa8-11eb-8ac2-4f4b4243b739.png)
 
 ### Wireframes
 - My general site map and wireframes are saved to PDF and can be found [here](static/images/wireframes.pdf). I designed them at the start of the project and they served as the basis for this project. 
@@ -78,23 +81,25 @@ Photo of Site Represented on Various Media to highlight responsive design:
 
 ## Features
 - The website is responsive on all device sizes (and has been tested through Chrome Dev Tools on various devices including iPhone 6, iPhone X, Galaxy S5, iPad and Desktop).
-- The website has several interactive elements, including three Bootstrap buttons on the Home page which can be clicked to navigate to the Phrases, Login and Register Pages, while there are further buttons in the add phrase, edit phrase, profile, login and register pages. 
+- The website has several interactive elements, including three Bootstrap buttons on the Home page which can be clicked to navigate to the Phrases, Login and Register Pages, while there are further call to action buttons in the add phrase, edit phrase, profile, login, register pages and error pages. 
 - Each page in the website features a responsive Bootstrap navigation bar with the site logo featured to the left and the four page links to the right (with the active page highlighted), and these pages also each contain a 3 column Bootstrap footer with a copyright message, address and contact information (email and phone). The pages contain the following features on various pages:
-    - Home Page: A main Jumbotron introductory section, three images relating to links to the phrases, login and register pages and two images of Korean culture and architecture. 
-    - Phrases Page: A main search box at the top with two buttons (reset and search), and the list of phrases below them.
+    - Home Page: A main Jumbotron introductory section, three images relating to links to the phrases, login and register pages, and two images of Korean culture and architecture. 
+    - Phrases Page: A main search box at the top of the page with two buttons (reset and search), and the list of phrases below them. When logged in, the user has access to edit and delete buttons in respect of phrases which they have added.
     - Login Page: Main background hero image with a login box in the centre where users can enter their username and passeword, and press a login button below, as well as a link to the register page. 
     - Register Page: Main background hero image with a registration box in the centre where users can enter their username and passeword, and press a register button below, as well as a link to the login page for current users. 
     - Profile Page: A main jumbotron section, with two cards below with links to the phrases and add phrase pages, as well as a background hero image.
     - Add Task Page: Main background hero image with an add phrase box in the centre where users can enter their phrase category, english phrase, Korean phrase and fun fact about Korean, and press an add phrase button below.
     - Edit Task Page: Main background hero image with an edit phrase box in the centre where users can edit their phrase category, english phrase, Korean phrase and fun fact about Korea, and press either the edit phrase or cancel buttons below.
+    - 404 Error Page: A page with a heading "404 Error", a confirmation statement "Something went wrong" and link back to the homepage, as well as a hero image below this text. 
+    - 500 Error Page: A page with a heading "500 Error", a confirmation statement "Something went wrong" and link back to the homepage, as well as a hero image below this text. 
 
 ## Database Design
 
-- I used MongoDB as the database for this project, and the plan of the database (which I named task_manager) is detailed below;
+- I used MongoDB as the database program for this project, and the plan of the database (which I named task_manager) is detailed below;
 
-![database](https://user-images.githubusercontent.com/71781554/121535833-68ab5d00-c9fa-11eb-9975-c53963210520.png)
+![database](https://user-images.githubusercontent.com/71781554/121675310-268e2400-caab-11eb-9767-8b6aa37303f8.png)
 
-I also created an Index relating to searches for English and Korean phrases in the Phrases html page.
+There are three collections titled "Categories", "Phrases" and "Users", and I also created an Index relating to the search function for English and Korean phrases in the Phrases page.
 
 The code for this project relating to interaction with the MongoDB database is outlined below;
 1. Getting the list of phrases saved to database:
@@ -114,7 +119,7 @@ def search():
     phrases = list(mongo.db.phrases.find({"$text": {"$search": query}}))
     return render_template("phrases.html", phrases=phrases)
 ```
-3. Checking if username already exists in database:
+3. Checking if username already exists in respect of register page:
 ```
 # App route for register
 @app.route("/register", methods=["GET", "POST"])
@@ -223,9 +228,9 @@ def delete_phrase(phrase_id):
 10. [Git](https://git-scm.com/): Git was used for version control throughout the project by utilizing the Gitpod terminal to Commit to git and Push to the GitHub repository.
 11. [GitHub](https://github.com/): GitHub was used to store the code for the project after being pushed from Gitpod.
 12. [FreeLogoDesign](https://www.freelogodesign.org/): FreeLogoDesign was used to create the Handy Korean Phrases logo.
-13. [Lets Enhance](https://letsenhance.io/): Lets Enhance was used to enhance the logo in order that the png file size would pass Google Lighthouse.
+13. [Lets Enhance](https://letsenhance.io/): Lets Enhance was used to enhance the logo in order that the png file size would pass Google Lighthouse requirements.
 13. [Favicon](https://en.wikipedia.org/wiki/Favicon): I used a Favicon image of the logo and added it to all of the pages.
-14. [Free Image Optimiser](http://www.imageoptimizer.net/Pages/Home.aspx): I utilised a photo optimiser to ensure that the high quality images that I used from the Unsplash website would load quickly.
+14. [Free Image Optimiser](http://www.imageoptimizer.net/Pages/Home.aspx): I utilised a photo optimiser to ensure that the high quality images that I used from the Unsplash website would load quicker.
 15. [Balsamiq](https://balsamiq.com/wireframes/?gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTJ5qmGTj2XQK_FoiFP6eKlzn-5oxqsh5N5hjjYKaGvx1AKPc1wb48EaAoSYEALw_wcB): Balsamiq was used to create the wireframes during the initial design phase.
 16. [Coolors](https://coolors.co/): I prepared the screenshot (included in this Readme) of the colours I had selected for this project using the Coolors template.
 
@@ -238,14 +243,14 @@ def delete_phrase(phrase_id):
 ### Application Hosting
 ### Heroku
 
-The website is hosted using Heroku and is deployed directly from the master branch of GitHub. The deployed site updates automatically as new commits are pushed to the master branch.
+This website is hosted using Heroku, a cloud platform as a service which supports several programming languages, and is deployed directly from the master branch of GitHub. The deployed site On Heroku updates automatically as new commits are pushed.
 
 Creating a Heroku app:
 - From the Heroku dashboard select "New" and then select "Create new app"
 
-- Add new app details to form:
+- Add the required new app details to the form:
   - Add an app name (this name must be unique)
-  - Select your region
+  - Select your region (which for Irish users would be Europe)
   - Click "Create App"
 
 Setting Environmental Variables:
@@ -259,7 +264,7 @@ Deployment:
 - Create the following required deployment files in the repository:
   - requirements.txt: This file lists the required python modules for Heroku to install. In order to create this file, type: pip freeze > requirements.txt in your IDE terminal.
   - Procfile: This file tells Heroku the command to launch the app. In order to create this file, type: python app.py > Procfile in your IDE terminal. 
-  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignores. To create this file, type: touch .gitignore in your IDE terminal type. This lists the files and directories to be excluded from live deployment, within the .gitignore file. Save this file to your repository root directory.
+  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignore. To create this file, type: touch .gitignore in your IDE terminal type. This lists the files and directories to be excluded from live deployment, within the .gitignore file. Save this file to your repository root directory.
 
 From the application top menu:
   - Select 'Deploy'
@@ -333,7 +338,7 @@ The Mongo URI is used to connect your application to your MongoDB cluster.
 #### MONGO_DBNAME
 This is the name of your database in MongoDB. This can be foung under the 'Collections' tab, which is located under your cluster.
 
-Running Development Server
+#### Running Development Server
 
 To launch a Http server using the development mode code for the application, use the following command in your IDE:
 
@@ -343,21 +348,30 @@ The IDE will then open a port for you to access the site.
 
 ## Credits
 ### Code
-- [Change input field to green when correct number of characters entered](https://stackoverflow.com/questions/39540302/how-to-change-the-background-color-of-an-input-field-when-text-is-entered): I studied this post in order to fully understand how to change the input field green when a correct number of characters had been entered, to assist with the validation process.
-- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and applied it to my project. 
+- [Change input field to green when correct number of characters entered](https://stackoverflow.com/questions/39540302/how-to-change-the-background-color-of-an-input-field-when-text-is-entered): I studied this post in order to fully understand how to change the input field green when a correct number of valid characters had been entered, to assist with the overall validation process for my form sections.
+- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and amended it for use in my project. 
 - [Show active page when using Flask and Jinja](https://stackoverflow.com/questions/55895502/dynamically-setting-active-class-with-flask-and-jinja2): I wished to ensure that the page currently clicked on was underlined as active in the Navbar. To achieve this while using flask, I followed the instructions listed in this Stackoverflow post. 
 - I studied a comment by Ed Bradley (Ed B) on Code Institute's Slack channel in respect of how to correctly set up the 404 & 500 error pages for Python and Flask.
 - I used the Bootstrap Library throughout the project to make the site more responsive through using the Bootstrap Grid System and employing Bootstrap elements for the Navbar, Footer, Jumbotron, Cards and Forms.
-- I studied the videos for the Code Institute mini project presented by Tim Nelson prior to starting my website, in order to get a good understanding of how both Flask and MongoDB operate, and how to implement a CRUD system.
+- I studied in detail the videos for the Code Institute mini project presented by Tim Nelson prior to starting my website, in order to get a good understanding of how both Flask and MongoDB operate, and how to implement a fully functioning CRUD system.
 
 ### Content
 - All content within this project was written by the developer.
 
 ### Media
 - The images used in this project have all been sourced from Unsplash, which is a stock photography site which contains a large catalogue of high-quality free to use images which are not the subject of copyright. The attributions for these images are listed below;
-    - [Image Title Page – Photographer](link)
+    - [Background Image Profile Page – Minseok Kwak](https://unsplash.com/photos/_1qQSgLoYKg)
+    - [Background Image Edit Phrase Page - Timothy Ries](https://unsplash.com/photos/S5XsDlChGAQ)
+    - [Background Image Add Phrase Page - Marcus Winkler](https://unsplash.com/photos/fxZihI5e6BI)
+    - [Background Image Login Page - Jongsun Lee](https://unsplash.com/photos/t-klL0oHX8Y)
+    - [Image of Laptop Home Page - Mark Wong](https://unsplash.com/photos/bvGgYoW97tk)
+    - [Image of Korean Woman Home Page - Johen Redman](https://unsplash.com/photos/gUcrrDxJ5SQ)
+    - [Image of Korean Temple Home Page - Brady Bellini](https://unsplash.com/photos/t5dGNNQVwg8)
+    - [Image of Books Home Page - Hope House Press](https://unsplash.com/photos/IOzk8YKDhYg)
+    - [Image of Iphone Home Page - Rahul Chakraborty](https://unsplash.com/photos/xsGxhtAsfSA)
+    - [Image of Cityscape Register Page - Farrel Nobel](https://unsplash.com/photos/vw_XqUC1ORQ)
 
-- The logo for Handy Korean Phrases was created using a template which I made on a design website called FreeLogoDesign, and which I amended in respect of colour scheme and design to match the proposed styling of my site. FreeLogoDeisgn is a website which allows people to make brand logos for free and download them to their own media. I also enhanced the logo using a website called https://letsenhance.io/. 
+- The logo for Handy Korean Phrases was created using a template which I made on a design website called FreeLogoDesign, and which I amended in respect of colour scheme and design to match the proposed styling of my site. FreeLogoDeisgn is a website which allows people to make brand logos for free and download them to their own media. I also enhanced the logo using a website called Lets Enhance. 
 
 ### Acknowledgements
 - I wish to thank my Mentor, Maranatha Ilesanmi, for providing me with excellent feedback and support during the various processes of competing this project.
