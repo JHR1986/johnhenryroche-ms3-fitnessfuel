@@ -134,18 +134,27 @@ footer .row {
   width: 100%;
 }
 
-.addtask-heroimage {
+.profile-heroimage {
   height: 100%;
-  background: url("../images/optimisedaddtaskimage.jpg");
+  background: url("../images/optimisedprofilepageimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 }
 
-.edittask-heroimage {
+.addphrase-heroimage {
   height: 100%;
-  background: url("../images/optimisededittaskimage.jpg");
+  background: url("../images/optimisedaddphraseimage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.editphrase-heroimage {
+  height: 100%;
+  background: url("../images/optimisededitphraseimage.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,7 +194,7 @@ footer .row {
   border-width: small;
   color: #ffffff;
   border-color: #3358D4;
-  background-color: rgb(212, 2, 2);
+  background-color: #d40202;
   border-radius: 25%;
 }
 
@@ -250,8 +259,8 @@ footer .row {
 
 /*Profile section - profile.html*/
 .profilelayout {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 130px;
+  padding-bottom: 130px;
 }
 
 .userconfirmation {
