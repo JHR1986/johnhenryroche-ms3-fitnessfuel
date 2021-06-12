@@ -154,7 +154,8 @@ def edit_phrase(phrase_id):
 
     phrase = mongo.db.phrases.find_one({"_id": ObjectId(phrase_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_phrase.html", phrase=phrase, categories=categories)
+    return render_template(
+        "edit_phrase.html", phrase=phrase, categories=categories)
 
 
 # App route for delete phrase function
