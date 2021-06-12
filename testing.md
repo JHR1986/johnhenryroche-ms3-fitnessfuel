@@ -96,12 +96,12 @@ This is a complete account of the testing process for the site from start to fin
     - Click on every navigation menu item (Home, Phrases, Log In & Register) and verify that they link to the correct page and that the active page is correctly highlighted.
     - Hover over the "Phrases", "Login" and “Register” links and verify the hover colour change features work as expected.
     - Click on the "Phrases", "Login and “Register” links and verify that they go correctly to the Phrases, Login and Register pages.
-    - Change the screen size to mobile and tablet, and click the hamburger icon in order to verify that the menu drops down correctly and that the menu items are fully visible.
-    - Conclude by verifying that functionality and responsiveness is all working correctly on mobile phone and tablet.
+    - Change the screen size to mobile and click the hamburger icon in order to verify that the menu drops down correctly and that the menu items are fully visible.
+    - Conclude by verifying that functionality and responsiveness is all working correctly on mobile and tablet view.
 
 2.  Introduction Text:
     - Go to "Home" page from a desktop.
-    - Confirm that the jumbotron text section is correctly appearing on screen and is fully responsive when the width of the window is reduced to mobile size.
+    - Confirm that the jumbotron text section is correctly appearing on screen and is fully responsive when the width of the window is reduced to tablet and mobile size.
     
 3. Three Cards & Two Images:
     - Confirm that the three cards are correctly spaced on screen and are fully responsive.
@@ -112,9 +112,9 @@ This is a complete account of the testing process for the site from start to fin
 4. Footer:
     - Confirm that the Font Awesome icons in the footer are visible and correctly formatted and that all text is spaced and clearly visible.
     - Reduce and expand the width of window to verify that the Footer is responsive and looks as it should on all devices, in line with the Bootstrap grid system.
-    - Confirm that Footer items are correctly stacked on top of one another in mobile view.
+    - Confirm that Footer items are correctly stacked on top of one another in tablet and mobile view.
 
-5.  Review all functionality and responsiveness on my mobile phone and tablet for the Home Page and confirm that everything on this page is correct.
+5.  Review all functionality and responsiveness on mobile and tablet for the Home Page and confirm that everything on this page is correct.
 
 #### Phrases Page
 1.  Navigation bar:
@@ -124,13 +124,13 @@ This is a complete account of the testing process for the site from start to fin
 2.  Search Box:
     - Reduce and expand the width of the window to verify that the search box behaves and centres the way expected, that it looks good on all device widths and that the font color and size is appropriate.
     - Confirm validation is working correctly for search input field.
-    - Search for an English or Korean phrase that is in the phrases list and confirm that it appears. 
-    - Ensure that No Results statement appears if search is not found. 
+    - Search all of the phrases by the entry to (i) English Phrase or (ii) Korean Phrase that are currrently in the phrases list and confirm that they appear correctly when searched for. 
+    - Ensure that No Results statement appears if search is not found in MongoDB database. 
     - Confirm that Reset button works correctly.
 
 3.  Phrases:
     - Confirm that the phrases are listed correctly below the search box.
-    - When not logged in, confirm that no phrases added by registered users can be edited or deleted.
+    - When not logged in, confirm that no phrases added by registered users can be either edited or deleted.
     - When logged in, confirm that edit and delete buttons work as expected.
     - Reduce and expand the width of the window to verify that the phrases section responds as expected, and that it reacts appropriately on all device widths.
 
@@ -147,7 +147,8 @@ This is a complete account of the testing process for the site from start to fin
 
 2.  Bootstrap Form for Login:
     - Click login with no details entered and confirm that validation is working correctly.
-    - Click login with only Username or Password entered and confirm that validation is working correctly.
+    - Click login with only Username or Password entered and confirm that validation is working correctly (e.g. login wont progress).
+    - Enter incorrect login details to confirm that flash message ("An incorrect Username and/or Password was entered!") is shown.
     - Confirm that input fields turn green when correct number of characters is entered.
     - When correct user details are entered, click Login button and confirm that user is directed to Profile page.
     - Reduce and expand width of window to verify that the form responds as expected, and that it fits correctly on all device widths from mobile to tablet to desktop.
@@ -159,7 +160,7 @@ This is a complete account of the testing process for the site from start to fin
     - Repeat verification steps completed for the Footer on Home and Phrases page.
     - Confirm that the Footer is identical on all html pages.
 
-5.  Review all functionality and responsiveness on my mobile phone and tablet for the Enquiries Page and confirm that everything on this page is correct.
+5.  Review all functionality and responsiveness on my mobile phone and tablet for the Login Page and confirm that everything on this page is correct.
 
 #### Register Page
 1.  Navigation bar:
@@ -168,7 +169,7 @@ This is a complete account of the testing process for the site from start to fin
 
 2.  Bootstrap Form for Register:
     - Click register with no details entered and confirm that validation is working correctly.
-    - Click register with only Username or Password entered and confirm that validation is working correctly.
+    - Click register with only Username or Password entered and confirm that validation is working correctly (e.g. registration won't progress).
     - Confirm that input fields turn green when correct number of characters is entered.
     - When correct user details are entered, click Register button and confirm that user is directed to Profile page.
     - Reduce and expand width of window to verify that the form responds as expected, and that it fits correctly on all device widths from mobile to tablet to desktop.
@@ -220,7 +221,7 @@ This is a complete account of the testing process for the site from start to fin
     - Repeat verification steps completed for the Footer on previous html pages.
     - Confirm that the Footer is identical on all html pages.
 
-5.  Review all functionality and responsiveness on my mobile phone and tablet for the Enquiries Page and confirm that everything on this page is correct.
+5.  Review all functionality and responsiveness on my mobile phone and tablet for the Add Phrase Page and confirm that everything on this page is correct.
 
 #### Edit Phrase Page
 1.  Navigation bar:
@@ -228,9 +229,10 @@ This is a complete account of the testing process for the site from start to fin
     - Confirm that the Navbar is identical on all html pages.
 
 2.  Bootstrap Form for Add Phrase:
-    - Clear input data and click Edit Phrase and confirm that validation is working correctly (form not submitted).
-    - Click Edit Phrase with one of the fields cleared and not completed (in turn) and confirm that validation is working correctly (form not submitted).
-    - Confirm that input fields turn green when correct number of characters is entered.
+    - Clear input data in the three input fields and click Edit Phrase and confirm that validation is working correctly (form not submitted). Note: Phrase category is a dropdown menu so will remain coloured green as item (e.g. Accommodation) has already been selected when user added phrase but the category can be changed by the user.
+    - Confirm that all fields (Phrase Category, English Phrase, Korean Phrase & Fun Fact) can be edited by the user. 
+    - Click Edit Phrase with one of the three input fields cleared and not completed (in turn) and confirm that validation is working correctly (form not submitted).
+    - Confirm that input fields turn white when less than 4 characters entered and turn back to green when correct number of characters is entered.
     - When correct information is entered, click Cancel button and confirm that user is directed to Phrases page and that phrase has not been edited.
     - When correct information is entered, click Edit Phrase button and confirm that user is directed to Phrases page.
     - Confirm that phrase has been edited, and that buttons to Edit or Delete phrase are listed below phrase.
@@ -243,13 +245,13 @@ This is a complete account of the testing process for the site from start to fin
     - Repeat verification steps completed for the Footer on previous html pages.
     - Confirm that the Footer is identical on all html pages.
 
-5.  Review all functionality and responsiveness on my mobile phone and tablet for the Enquiries Page and confirm that everything on this page is correct.
+5.  Review all functionality and responsiveness on my mobile phone and tablet for the Edit Phrase Page and confirm that everything on this page is correct.
 
 #### Additional HTML Pages
 
-- Login: Confirm that clicking the Logout link works and that when clicked the user is returned to the Login page and sees confirmation flash message.
-- Error Pages: Confirm that 404 and 500 error html pages are correctly written. When user reaches the 403 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached.
-- Review all functionality and responsiveness on my mobile phone and tablet for these Pages and confirm that everything on this page is correct.  
+- Logout: Confirm that clicking the Logout link works and that when clicked the user is returned to the Login page and sees confirmation flash message.
+- Error Pages: Confirm that 404 and 500 error html pages are correctly set up (html has been validated). When user reaches the 404 and 500 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached.
+- Review all functionality and responsiveness on my mobile phone and tablet for the 404 page and confirm that everything on this page is correct.  
 
 ## Further Testing
 
