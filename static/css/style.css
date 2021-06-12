@@ -273,7 +273,7 @@ footer .row {
   /* For mobile phones: */
   .centre-card {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
   }
 
   .centre-card2 {
@@ -285,12 +285,12 @@ footer .row {
 @media only screen and (max-width: 900px) and (min-width: 768px) {
   .centre-card {
     margin: 0 auto;
-    width: 40%;
+    width: 60%;
   }
 
   .centre-card2 {
     margin: 0 auto;
-    width: 40%;
+    width: 60%;
   }
 }
 
