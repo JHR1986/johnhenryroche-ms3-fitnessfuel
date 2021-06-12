@@ -45,7 +45,7 @@
 {% if phrases|length > 0 %}
 <div class="card phrasebackground">
     {% for phrase in phrases %}
-    <div class="card-body phrases">
+    <div class="card-body phrases pt-2 pb-2">
         <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> Category: {{ phrase.category_name }}</h5>
         <h6><i class="far fa-comment-dots"></i> English Phrase: {{ phrase.english_name }}</h6>
         <h6 class="korean-text"><i class="far fa-comment-dots"></i> Korean Phrase: {{ phrase.korean_name }}</h6>
