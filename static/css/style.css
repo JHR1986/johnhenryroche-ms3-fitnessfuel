@@ -184,7 +184,7 @@ footer .row {
 
 /*Buttons - all pages*/
 .button {
-  border-width: small;
+  border-width: thin;
   color: #ffffff;
   border-color: #3358D4;
   background-color: #013200;
@@ -196,7 +196,7 @@ footer .row {
 }
 
 .button-red {
-  border-width: small;
+  border-width: thin;
   color: #ffffff;
   border-color: #3358D4;
   background-color: #d40202;
