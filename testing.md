@@ -12,16 +12,30 @@
     + [Frequent Visitor Goals](#frequent-visitor-goals)
   * [Manual Logical Testing of all Elements and Functionality on every Page](#manual-logical-testing-of-all-elements-and-functionality-on-every-page)
     + [Home Page](#home-page)
-    + [Experiences Page](#experiences-page)
-    + [Enquiries Page](#enquiries-page)
+    + [Phrases Page](#phrases-page)
+    + [Login Page](#login-page)
+    + [Register Page](#register-page)
+    + [Profile Page](#profile-page)
+    + [Add Phrase Page](#add-phrase-page)
+    + [Edit Phrase Page](#edit-phrase-page)
+    + [Additional HTML Pages](#additional-html-pages)
 - [Further Testing](#further-testing)
   * [Further Testing Details](#further-testing-details)
   * [Known Bugs](#known-bugs)
 
 ## Testing
-- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project (10 html pages and 1 css page) in order to ensure that there were no syntax errors in the project (e.g. the code was fully accurate and correctly structured throughout). 
-- The JavaScript file was also tested in JSHint and no errors were recorded (as well as no errors being recorded in DevTools).
-- I tested the Python file for PEP8 compliance at Pep8Online.
+- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project (10 html pages and 1 css page) in order to ensure that there were no syntax errors in the project (e.g. the code was fully accurate and correctly structured throughout).
+The results that I received for the HTML and CSS pages are shown below;
+
+![htmlvalidation](https://user-images.githubusercontent.com/71781554/121773988-789c7b80-cb77-11eb-86f4-d2e8e6a71d9e.png)
+![cssvalidation](https://user-images.githubusercontent.com/71781554/121773997-85b96a80-cb77-11eb-8fef-484355ca170d.png)
+
+- The JavaScript file was also tested in JSHint and no errors were recorded (as well as no errors being recorded in DevTools). An image of the result is listed below;
+![jsvalidation](https://user-images.githubusercontent.com/71781554/121774014-b3061880-cb77-11eb-91bb-e9183ecd325b.png)
+
+- I tested the Python file for PEP8 compliance at Pep8Online and it was fully compliant (see image below);
+![pythonvalidator](https://user-images.githubusercontent.com/71781554/121774027-ce712380-cb77-11eb-8046-a92883bebaab.png)
+
 - I ensured that alt tags were added to all images for accessibility purposes. 
 
 ### Client Stories Testing
@@ -39,6 +53,7 @@ The most direct path through the website is as follows:
 - On the New Phrase page, the user goes back to the Phrases page when a new phrase is added. There they have the option of clicking an edit or delete button in respect of their phrases. Clicking the Edit button brings them to the Edit Phrase page.
     1. "Edit": From Phrases - Edit Phrase
 - On the Edit Phrase page, the user goes back to the Phrases page when a phrase is edited. They have the option to continue using the Navbar or to click the Logout link to return to the Login page.
+- When the Logout button in the Navbar is clicked the user returns to the Login page and is no longer logged in.
 
 The Home page provides a brief overview of the purpose of the site, while the Profile page confirms what the user can do in respect of CRUD functionality, and the information is kept very concise and to the point in order that the user does not feel overwhelmed with information.
 
@@ -59,14 +74,14 @@ As a First Time Visitor, I want to be able to go to the register page and create
 - When a user logs in to their account, they are directed to their profile page, which has two call to action buttons to either go to the Phrases page (where they can see all of the phrases added by users) or to add a New Phrase. 
 
 As a Returning Visitor, I want to be able to easily access the key information in respect of contacting the site owners (info contained in footer) if I have any queries in respect of the website itself:
-- The footer to each of the html pages lists the site's address in Dublin, their opening hours and phone/email address, so that any subsequent queries can be addressed.
+- The footer to each of the html pages lists the site's address in Dublin, their opening hours and phone/email address, so that any subsequent queries can be addressed to the site owners.
 
 #### Frequent Visitor Goals
 As a Frequent/Returning Visitor, I want to be able to login to my account and create, read, update and delete my own phrases:
 - As highlighted in the frequent visitor section, when logged in the user has access to CRUD functionality in respect of the phrases that they create that are listed on the Phrases page.
 
 As a Frequent/Returning Visitor, I want to be able to see which new phrases have been added to the site since my last visit:
-- With the site being updated on a regular basis, the Phrases page will list more and more phrases, so that the user can improve their language skills when they return to the site on a regular basis. 
+- With the site being updated on a regular basis, the Phrases page will list more and more phrases, so that the user can improve their language skills when they return to the site on a regular basis. The search functionality also enables the user to find phrases easily when they begin to increase significantly in number. 
 
 ### Manual Logical Testing of all Elements and Functionality on every Page
 
@@ -241,11 +256,17 @@ This is a complete account of the testing process for the site from start to fin
 ### Further Testing Details
 
 - The website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers, and was found to operate satisfactorily on all of these.
-- I also tested the website in Google Lighthouse, which returned the following scores; (i) Performance: TBC, (ii) Accessibility: TBC, (iii) Best Practices: TBC & (iv) SEO: TBC.
+- I also tested the website in Google Lighthouse, which returned the following scores; (i) Performance: 98, (ii) Accessibility: 100, (iii) Best Practices: 100 & (iv) SEO: 100. The result image is detailed below;
+
+![lighthouse](https://user-images.githubusercontent.com/71781554/121774293-c74b1500-cb79-11eb-8b27-f6a1590f5923.png)
+
 - The website was viewed on a variety of devices such as Desktop, iPad, iPhone 6 & iPhone X. All formats were in order with no sections out of line or overlapping.
+
 - I completed a large amount of detailed testing to ensure that all links were working correctly and that external links opened (as detailed in Manual Testing section above), and was happy that there were no broken links. This involved going into every page of the site and clicking every link/button that is available to a user (as part of their journey through the site) to ensure that everything was fully functional. 
+
 - I checked the console in Devtools and confirmed that there were no error reports in respect of any of the pages.
-- As part of the testing process, my family members were asked to review the site and documentation to point out any bugs and/or user experience issues, and I also listed the project on the Peer Review channel on Slack to take on board any suggestions offered from that.
+
+- As part of the testing process, my family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
 - N/A - No bugs were found during the testing completed before submission. 
