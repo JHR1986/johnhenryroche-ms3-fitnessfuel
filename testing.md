@@ -228,8 +228,8 @@ This is a complete account of the testing process for the site from start to fin
     - Repeat the verification steps completed for the Navbar on the previous html pages.
     - Confirm that the Navbar is identical on all html pages.
 
-2.  Bootstrap Form for Add Phrase:
-    - Clear input data in the three input fields and click Edit Phrase and confirm that validation is working correctly (form not submitted). Note: Phrase category is a dropdown menu so will remain coloured green as item (e.g. Accommodation) has already been selected when user added phrase but the category can be changed by the user.
+2.  Bootstrap Form for Edit Phrase:
+    - Clear input data in the three input fields and click Edit Phrase and confirm that validation is working correctly (form not submitted). Note: Phrase category is a dropdown menu so will remain coloured green as item (e.g. Accommodation) has already been selected when user added phrase and is a requirement, but the category can be changed by the user in Edit Page.
     - Confirm that all fields (Phrase Category, English Phrase, Korean Phrase & Fun Fact) can be edited by the user. 
     - Click Edit Phrase with one of the three input fields cleared and not completed (in turn) and confirm that validation is working correctly (form not submitted).
     - Confirm that input fields turn white when less than 4 characters entered and turn back to green when correct number of characters is entered.
