@@ -46,10 +46,10 @@
 <div class="card phrasebackground">
     {% for phrase in phrases %}
     <div class="card-body phrases">
-        <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ phrase.category_name }}</h5>
-        <h6><i class="far fa-comment-dots"></i> {{ phrase.english_name }}</h6>
-        <h6 class="korean-text"><i class="far fa-comment-dots"></i> {{ phrase.korean_name }}</h6>
-        <p class="card-text"><i class="fas fa-clipboard-list"></i> {{ phrase.brief_description }}</p>
+        <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> Category: {{ phrase.category_name }}</h5>
+        <h6><i class="far fa-comment-dots"></i> English Phrase: {{ phrase.english_name }}</h6>
+        <h6 class="korean-text"><i class="far fa-comment-dots"></i> Korean Phrase: {{ phrase.korean_name }}</h6>
+        <p class="card-text"><i class="fas fa-clipboard-list"></i> Fun Fact: {{ phrase.brief_description }}</p>
         <h6>by: {{ phrase.created_by }}</h6>
         {% if session.user|lower == phrase.created_by|lower %}
         <a class="btn btn-primary button-red" href="{{ url_for('delete_phrase', phrase_id=phrase._id) }}"
