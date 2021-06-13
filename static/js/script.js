@@ -1,6 +1,7 @@
 // Function for validation of form templates:
 // jshint esversion: 6
-// I studied this js validation feature from mdbootstrap and applied it to my project - see Readme. 
+// I studied this js validation function that was detailed in the mdbootstrap website and applied it to forms in my site - see Readme. 
+
 (function () {
     'use strict';
     window.addEventListener('load', function () {
