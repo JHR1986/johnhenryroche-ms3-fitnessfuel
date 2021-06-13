@@ -11,7 +11,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group input-area">
-                            <label class="form-text" for="category_name"><i class="fas fa-clipboard-list"></i> Phrase Category</label>
+                            <label class="form-text" for="category_name"><i class="fas fa-clipboard-list"></i> Phrase
+                                Category</label>
                             <select id="category_name" class="form-control green-text" name="category_name" required>
                                 <option value="" disabled>Choose Category</option>
                                 {% for category in categories %}
@@ -27,7 +28,8 @@
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
-                            <label class="form-text" for="english_name"><i class="fas fa-language"></i> English Phrase</label>
+                            <label class="form-text" for="english_name"><i class="fas fa-language"></i> English
+                                Phrase</label>
                             <input type="text" class="form-control green-text" id="english_name" name="english_name"
                                 minlength="5" maxlength="50" value="{{ phrase.english_name }}"
                                 placeholder="English Phrase" required>
@@ -41,7 +43,8 @@
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
-                            <label class="form-text" for="korean_name"><i class="fas fa-language"></i> Korean Phrase</label>
+                            <label class="form-text" for="korean_name"><i class="fas fa-language"></i> Korean
+                                Phrase</label>
                             <input type="text" class="form-control green-text" id="korean_name" name="korean_name"
                                 minlength="5" maxlength="50" value="{{ phrase.korean_name }}"
                                 placeholder="Korean Phrase" required>
@@ -55,7 +58,8 @@
                     </div>
                     <div class="row">
                         <div class="form-group input-area">
-                            <label class="form-text" for="brief_description"><i class="far fa-file-alt"></i> Fun Fact about
+                            <label class="form-text" for="brief_description"><i class="far fa-file-alt"></i> Fun Fact
+                                about
                                 Korea?</label>
                             <input type="text" class="form-control green-text" id="brief_description"
                                 name="brief_description" minlength="5" maxlength="200"
