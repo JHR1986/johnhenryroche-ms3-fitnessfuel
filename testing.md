@@ -36,7 +36,7 @@ The results that I received for the HTML and CSS pages are shown below;
 - I tested the Python file for PEP8 compliance at Pep8Online and it was fully compliant (see image below);
 ![pythonvalidator](https://user-images.githubusercontent.com/71781554/121774027-ce712380-cb77-11eb-8046-a92883bebaab.png)
 
-- I ensured that alt tags were added to all images for accessibility purposes. 
+- I ensured that alt tags were added to all images and that aria labels were added to all background images for accessibility purposes. 
 
 ### Client Stories Testing
 The most direct path through the website is as follows:
@@ -229,12 +229,10 @@ This is a complete account of the testing process for the site from start to fin
     - Confirm that the Navbar is identical on all html pages.
 
 2.  Bootstrap Form for Edit Phrase:
-    - Clear input data in the three input fields and click Edit Phrase and confirm that validation is working correctly (form not submitted). Note: Phrase category is a dropdown menu so will remain coloured green as item (e.g. Accommodation) has already been selected when user added phrase and is a requirement, but the category can be changed by the user in Edit Page.
-    - Confirm that all fields (Phrase Category, English Phrase, Korean Phrase & Fun Fact) can be edited by the user. 
-    - Click Edit Phrase with one of the three input fields cleared and not completed (in turn) and confirm that validation is working correctly (form not submitted).
-    - Confirm that input fields turn white when less than 4 characters entered and turn back to green when correct number of characters is entered.
-    - When correct information is entered, click Cancel button and confirm that user is directed to Phrases page and that phrase has not been edited.
-    - When correct information is entered, click Edit Phrase button and confirm that user is directed to Phrases page.
+    - Confirm that data from the added phrase to be edited is listed correctly and that the fields are currently green (as the information that was previously added was valid).
+    - Confirm that all fields (Phrase Category, English Phrase, Korean Phrase & Fun Fact) can be edited by the user and that form will only submit when all fields are filled correctly (e.g. validation is working as intended). 
+    - When correct information is present, click Cancel button and confirm that user is directed to Phrases page and that phrase has not been edited.
+    - When correct information is present, click Edit Phrase button and confirm that user is directed to Phrases page.
     - Confirm that phrase has been edited, and that buttons to Edit or Delete phrase are listed below phrase.
     - Reduce and expand width of window to verify that the form responds as expected, and that it fits correctly on all device widths from mobile to tablet to desktop.
 
