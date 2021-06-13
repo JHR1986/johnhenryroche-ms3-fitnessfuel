@@ -349,11 +349,11 @@ The IDE will then open a port for you to access the site.
 ## Credits
 ### Code
 - [Change input field to green when correct number of characters entered](https://stackoverflow.com/questions/39540302/how-to-change-the-background-color-of-an-input-field-when-text-is-entered): I studied this post in order to fully understand how to change the input field green when a correct number of valid characters had been entered, to assist with the overall validation process for my form sections.
-- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and amended it for use in my project. 
+- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and amended it for use in my project in respect of the form sections in the Phrases, Add Phrase, Edit Phrase, Login and Register Pages. 
 - [Show active page when using Flask and Jinja](https://stackoverflow.com/questions/55895502/dynamically-setting-active-class-with-flask-and-jinja2): I wished to ensure that the page currently clicked on was underlined as active in the Navbar. To achieve this while using flask, I followed the instructions listed in this Stackoverflow post. 
 - I studied a comment by Ed Bradley (Ed B) on Code Institute's Slack channel in respect of how to correctly set up the 404 & 500 error pages for Python and Flask.
 - I used the Bootstrap Library throughout the project to make the site more responsive through using the Bootstrap Grid System and employing Bootstrap elements for the Navbar, Footer, Jumbotron, Cards and Forms.
-- I studied in detail the videos for the Code Institute mini project presented by Tim Nelson prior to starting my website, in order to get a good understanding of how both Flask and MongoDB operate, and how to implement a fully functioning CRUD system.
+- I studied in detail the videos for the Code Institute mini project presented by Tim Nelson prior to starting my website, in order to get a clear understanding of how both Flask and MongoDB operate, and how to implement a fully functioning CRUD system.
 
 ### Content
 - All content within this project was written by the developer.
