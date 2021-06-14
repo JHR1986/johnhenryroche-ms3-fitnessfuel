@@ -221,13 +221,13 @@ def delete_phrase(phrase_id):
 1. [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/): Bootstrap was utilised to assist with the responsiveness and styling of the website, specifically in respect of the Navigation and Footer Sections and various jumbtron, cards and rows/columns features used.
 2. [MongoDB](https://www.mongodb.com/): MongoDB Atlas was used as the database for this project.
 3. [PIP](https://pypi.org/project/pip/): PIP was used to install the tools needed in this project.
-4. [Pymongo](https://pypi.org/project/pymongo/): PyMongo was used to serve the communication between Python and MongoDB.
+4. [PyMongo](https://pypi.org/project/pymongo/): PyMongo was used to serve the communication between Python and MongoDB.
 5. [Visual Studio Code](https://code.visualstudio.com/): Visual Studio Code was the IDE used for developing this project.
 6. [Heroku](https://www.heroku.com/): Heroku was utilised to host and deploy my website.
 7. [Jinja](https://jinja.palletsprojects.com/en/3.0.x/): Jinja was utilised to simplify displaying data from the backend of this project smoothly and effectively.
 8. [Flask](https://flask.palletsprojects.com/en/2.0.x/): Flask was utilised to construct and render pages for the project.
 9. [Google Fonts](https://fonts.google.com/): Google fonts was utilised to import the 'PT Sans' font into the style.css file and this font is used on all pages throughout the website.
-10. [Font Awesome](https://fontawesome.com/): Font awesome was utilised in the Phrases, Login, Register, Add Phrase and Edit Phrases pages, as well as in the footer, for aesthetic and UX purposes. I matched the icons with the activity or place that they most closely represented.
+10. [Font Awesome](https://fontawesome.com/): Font Awesome was utilised in the Phrases, Login, Register, Add Phrase and Edit Phrases pages, as well as in the footer, for aesthetic and UX purposes. I matched the icons with the activity or place that they most closely represented.
 11. [Git](https://git-scm.com/): Git was used for version control throughout the project by utilizing the Gitpod terminal to Commit to git and Push to the GitHub repository.
 12. [GitHub](https://github.com/): GitHub was used to store the code for the project after being pushed from Gitpod.
 13. [FreeLogoDesign](https://www.freelogodesign.org/): FreeLogoDesign was used to create the Handy Korean Phrases logo.
