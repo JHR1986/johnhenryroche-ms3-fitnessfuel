@@ -248,8 +248,7 @@ This is a complete account of the testing process for the site from start to fin
 #### Additional HTML Pages
 
 - Logout: Confirm that clicking the Logout link works and that when clicked the user is returned to the Login page and sees confirmation flash message.
-- Error Pages: Confirm that 404 and 500 error html pages are correctly written (html has been validated). When user reaches the 404 and 500 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached. I tested the 404 page byb entering incorrect page link and confirmed that it is working correctly.
-- Review all functionality and responsiveness on my mobile phone and tablet for the 404 page and confirm that everything on this page is correct.  
+- Error Pages: Confirm that 404 and 500 error html pages are correctly written (html has been validated). When user reaches the 404 and 500 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached. I reviewed all the functionality and responsiveness on my mobile phone and tablet for the 404 page and confirmed that everything on this page is correct.  
 
 ## Further Testing
 
