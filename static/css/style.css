@@ -61,6 +61,7 @@ footer .row {
   font-size: 20px;
   margin-top: 1.5px;
 }
+
 /*End of Footer Section - all pages*/
 
 /*Home Page Images - index.html*/
@@ -116,6 +117,7 @@ footer .row {
 .input-area {
   padding-left: 10px;
 }
+
 /*End of Form & Card Sections*/
 
 /*Background images - login, register, profile, addphrase & editphrase pages*/
@@ -167,6 +169,7 @@ footer .row {
 .phrasebackground {
   background-color: #3358D4;
 }
+
 /*End of Background images*/
 
 /*Flash Messages - all pages*/
@@ -203,6 +206,7 @@ footer .row {
 .button-margin {
   margin: 3px;
 }
+
 /*End of Buttons - all pages*/
 
 /*Hyperlinks - all pages*/
@@ -285,7 +289,7 @@ footer .row {
 
 @media only screen and (max-width: 900px) and (min-width: 768px) {
 
-/* For tablets: */
+  /* For tablets: */
   .centre-card {
     margin: 0 auto;
     width: 60%;
@@ -296,4 +300,3 @@ footer .row {
     width: 60%;
   }
 }
-
