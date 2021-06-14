@@ -30,7 +30,7 @@
 
 [View the Live Website Here](https://jhroche-handy-korean-phrases.herokuapp.com/)
 
-This project comprises the development of a Korean phrases resource website, where English speakers who are visiting Korea as tourists can learn key phrases in this language in order to assist them with communication when they are in the country. The website also allows visitors to the site to register an account and create their own profile, from which they can then create, read, update and delete phrases themselves when they are logged in. 
+This project comprises the development of a Korean phrases resource website, where English speakers who are visiting South Korea as tourists can learn key phrases in this language in order to assist them with communication when they are in the country. The website also allows visitors to the site to register an account and create their own profile, from which they can then create, read, update and delete phrases themselves when they are logged in. 
 
 In respect of the overall construction of this website, it has been designed to be fully responsive, intuitive and accessible on a range of media devices (e.g. mobile, tablet & desktop), in order to make it as easy as possible for users of the website to navigate it and source the information that they require.
 
@@ -74,6 +74,8 @@ Photo of Site Represented on Various Media to highlight responsive design:
 ![homepageimages](https://user-images.githubusercontent.com/71781554/121673393-bd0d1600-caa8-11eb-8270-5b0d042b07ad.png)
 
 ![homepageimages2](https://user-images.githubusercontent.com/71781554/121673457-cc8c5f00-caa8-11eb-8ac2-4f4b4243b739.png)
+
+![loginimage](https://user-images.githubusercontent.com/71781554/121863517-d9e95980-ccf3-11eb-9bc1-35499af51e20.jpg)
 
 ### Wireframes
 - My general site map and wireframes are saved to PDF and can be found [here](static/images/wireframes.pdf). I designed them at the start of the project and they served as the basis for this project. 
