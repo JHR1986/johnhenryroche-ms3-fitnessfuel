@@ -242,102 +242,85 @@ def delete_phrase(phrase_id):
 - Testing information for this project can be found in the separate Testing File [here](testing.md). 
 
 ## Deployment
-### Database Deployment
-### Heroku
 
-This website is hosted using Heroku, a cloud platform which supports several programming languages, and is deployed directly from the master branch of GitHub. The deployed site on Heroku updates automatically as new commits are pushed to the Github repository.
+### How to run this project locally
 
-Creating a Heroku app:
-- From the Heroku dashboard select "New" and then select "Create new app".
+In order to run this project on your own IDE, follow the instructions detailed below:
 
-- Add the required new app details to the form entries:
-  - Add an app name (this name must be unique in order to be valid).
-  - Select the region your app will be hosted from (which for Irish users would be Europe).
-  - Click the "Create App" button.
+Ensure that you have the following tool:
+- An IDE such as Visual Studio Code (which was used to create the Handy Korean Phrases site).
 
-Setting Environmental Variables:
-- From the Heroku dashboard, select your newly created app from the list on the page.
-- Select "Settings" from the top menu:
-  - Under 'Config Vars', select "Reveal Config Vars".
-  - Add your environment variables in key-value pairs, and then click "Add" to add any additional pairings.
+Please note that the following items must be installed on your machine in order to run this project:
 
-Deployment:
-- Create the following required deployment files in your repository:
-  - requirements.txt: This file lists the required python modules to be installed. In order to create this file, type: pip freeze > requirements.txt in your IDE terminal.
-  - Procfile: This file tells Heroku the command to launch the app. In order to create this file, type: python app.py > Procfile in your IDE terminal. 
-  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignore. To create this file, type: touch .gitignore in your IDE terminal type. Gitignore lists the files and directories to be excluded from live deployment. Save this file to your repository root directory.
+- PIP (used for installation of tools)
+- Python 3 (programming language)
+- Git (used to handle version control)
+- An account at MongoDB (database for this project) which is running locally on your machine.
 
-From the application top menu:
-  - Select 'Deploy'
-  - Choose your Deployment method as listed below:
-    - Github: Select the correct Github account and type in the repository name that you wish to deploy, and then select "Connect".
-    - Manual Deployment: Choose the correct branch you wish to deploy from the drop-down list. Select "Deploy Branch" and Heroku will then confirm that "Your App has successfully deployed". 
+#### Instructions
+1. Save a copy of the Github repository located at https://github.com/JHR1986/johnhenryroche-ms3-handykoreanphrases by clicking the Code dropdown button and then pressing "download zip" and extracting the zip file to your chosen folder. If you have already have Git installed on your system, you can clone the repository with the following command;
 
-Automatic Deployment
-  - From the application top menu, select 'Deploy' and ensure that the app is connected to the correct repository. Under the 'Automatic Deployment' section, select 'Enable Automatic Deployment". 
+``git clone https://github.com/JHR1986/johnhenryroche-ms3-handykoreanphrases``
 
-### GitHub and GitPod Repository Management
+2. If possible open a terminal session in the unzip folder or change directory to the correct location.
 
-### How to clone 'Handy Korean Phrases' in GitHub and setup on Heroku.
+3. A virtual environment is recommended for the Python interpreter, and on this basis it is suggested that the user use Python's built in virtual environment by entering the following command:
 
-To run a version of the Handy Korean Phrases website locally, you can clone this repository by using the following steps;
+``python -m .venv venv``
 
-Login to a code editor of your choice and then complete the following commands;
+NOTE: It should be noted that your Python command may differ (e.g. such as python3 or py). The venv command creates a lightweight “virtual environment” with its own site directory, optionally isolated from system site directories.
 
-1. Login to your GitHub account, click on 'Your Repositories' and then click on the 'Handy Korean Phrases' repository.
-2. Click on the 'Code' dropdown button (beside the green Gitpod button).
-3. Under the 'HTTPS' heading, click the clipboard icon to the right of the repository URL.
-4. In the code editor that you are using, open an existing repository or create a new repository.
-5. Open a new Terminal and type 'git clone', paste the URL link and press enter.  
+4. Activate the .venv with the following command:
 
-### Installing Requirements
+``.venv\Scripts\activate`` 
 
-- Install all requirements modules to your IDE of choice with the following command:
+Note: Again this command may differ depending on your operating system.
 
-`pip3 install -r requirements.txt`
+5. If required, upgrade pip locally with the following command:
 
-### Create Collections in MongoDB
+``pip install --upgrade pip.``
 
-- Login to your MongoDB account.
-- Create a Cluster and then create a Database using the information contained in the Database Design section of this Readme file. The Database that I created for this project is called task_manager and there are three collections titled "Categories", "Phrases" and "Users", and I also created an Index relating to the search function for English and Korean phrases in the phrases page.
+6.Install all required modules with the command:
 
-### Setup Environmental Variables
+``pip -r requirements.txt.``
 
-- Create a '.gitignore' file in the root directoy, and then add 'env.py' and 'pycache/' to the file list within the gitignore file, so that they are not committed to Github. 
-- When these steps are done and the 'env.py' file has been created, write the following code lines within the 'env.py' file;
+7. In your local IDE, create a file called ``.flaskenv``.
 
-```
-import os
-os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", "[Insert UNIQUE ID]")
-os.environ.setdefault("MONGO_URI", "[Insert UNIQUE ID]") 
-os.environ.setdefault("MONGO_DBNAME", "[Insert UNIQUE ID]")
-```
+8. Inside the .flaskenv file, create a SECRET_KEY variable and a MONGO_URI in order to link to your own database. In line with my project, please make sure to call your Database ``task_manager``, with 3 Collections called ``users``, ``phrases`` and ``categories``. The structure of these collections are fully outlined above in the Database section of the Readme. 
 
-Note: For each section listed above as [insert UNIQUE ID], you will need to provide your own unique identifier which must also be aligned to Heroku environmental variables.
+9. You can now run the application by entering the following command:
 
-### Setup Unique Identifies / Environment Variables
+``python app.py``
 
-#### SECRET_KEY
-A Secret Key is required when using flash() and session() functions in flask. The key can be whatever the uses wishes, but it is good practice to create a randomly generated secure key for security purposes in order that it cannot be accessed by other users.
+You can visit the website at the following address: ``http://127.0.0.1:5000``
 
-#### MONGO_URI
-The Mongo URI is important as it is used to connect your Heroku application to your MongoDB cluster. The steps for how to implement the Mongo URI feature are detailed below;
+### Heroku Deployment
 
-- When you are in the correct Cluster, Click the 'Overview' tab followed by the 'Connect' button on the right hand side, and then select 'Connect your application'.
-- Select your correct version of Python and copy the connection string, and then replace the 'username' and 'password' text with the relevant information you setup in the database section.
+In order to deploy the Handy Korean Phrases website to Heroku (which is a cloud platform service which supports several programming languages), you are required to complete the following steps:
 
-#### MONGO_DBNAME (the MongoDB database name)
-This is the name of your database in MongoDB. For my project, I used the database name "task_manager". The name of your database is located in the 'Collections' tab.
+1. Create a ``requirements.txt`` file using the terminal command ``pip freeze > requirements.txt``.
 
-#### Running the Development Server
+2. Create a ``Procfile`` with the terminal command ``echo web: python app.py > Procfile``.
 
-To launch the server, use the following command in your code editor:
+3. ``git add`` and ``git commit`` the new requirements.txt file and Procfile, and then ``git push`` the newly created project to GitHub.
 
-`python3 app.py http.server`
+4. Create a new app on the Heroku website by clicking the "New" button which is located at the top right corner of the Heroku dashboard. Provide a name for the project and set the region to Europe (this is required for users based in Ireland).
 
-The code editor will then open a port for you to access your site.
+5. From the Heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and then select GitHub.
+
+6. Confirm that the Heroku app has correctly linked to the correct GitHub repository.
+
+7. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars" and then set the following config vars detailed below:
+
+![deployment](https://user-images.githubusercontent.com/71781554/121898137-fb117080-cd1a-11eb-9a36-0f1e9dbbbc4e.png)
+
+- In order to get your MONGO_URI (which is a required step), read the official documentation relating to connecting to MongoDB [here](https://docs.mongodb.com/guides/server/drivers/).
+
+8. In the Heroku dashboard, click "Deploy".
+
+9. In the "Manual Deployment" section of this page, make sure that the master branch is selected and then click "Deploy Branch".
+
+10. The site is now successfully deployed!
 
 ## Credits
 ### Code
