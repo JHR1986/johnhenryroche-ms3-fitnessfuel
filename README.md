@@ -101,7 +101,7 @@ Photo of Site Represented on Various Media to highlight responsive design:
 
 ![database](https://user-images.githubusercontent.com/71781554/121675310-268e2400-caab-11eb-9767-8b6aa37303f8.png)
 
-There are three collections titled "Categories", "Phrases" and "Users", and I also created an Index relating to the search function for English and Korean phrases in the Phrases page.
+There are three collections titled "Categories", "Phrases" and "Users", and I also created an Index relating to the search function for English and Korean phrases in the phrases page.
 
 The code for this project relating to interaction with the MongoDB database is outlined below;
 1. Getting the list of phrases saved to database:
@@ -112,7 +112,7 @@ def get_phrases():
     phrases = list(mongo.db.phrases.find())
     return render_template("phrases.html", phrases=phrases, page="get_phrases")
 ```
-2. Searching for English or Korean phrase:
+2. Searching for English or Korean phrases:
 ```
 # App route for search function
 @app.route("/search", methods=["GET", "POST"])
