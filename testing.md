@@ -25,7 +25,7 @@
 
 ## Testing
 - The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project (10 html pages and 1 css page) in order to ensure that there were no syntax errors in the project (e.g. the code was fully accurate and correctly structured throughout).
-The results that I received for the HTML and CSS pages are shown below;
+The results confirmation that I received for the 10 HTML pages and 1 CSS page are shown below;
 
 ![htmlvalidation](https://user-images.githubusercontent.com/71781554/121773988-789c7b80-cb77-11eb-86f4-d2e8e6a71d9e.png)
 ![cssvalidation](https://user-images.githubusercontent.com/71781554/121773997-85b96a80-cb77-11eb-8fef-484355ca170d.png)
@@ -36,11 +36,11 @@ The results that I received for the HTML and CSS pages are shown below;
 - I tested the Python file for PEP8 compliance at Pep8Online and it was fully compliant (see image below);
 ![pythonvalidator](https://user-images.githubusercontent.com/71781554/121774027-ce712380-cb77-11eb-8046-a92883bebaab.png)
 
-- I ensured that alt tags were added to all images and that aria labels were added to all background images for accessibility purposes. 
+- In order to ensure that the site has very good accessibility, I ensured that alt tags were added to all images and that aria labels were added to all background images. The site scored an accessibility score of 100 in the Google Lighthouse review (see Further Testing section below). 
 
 ### Client Stories Testing
 The most direct path through the website is as follows:
-- Home – Phrases – Login (if a user) or Register (if not a user)
+- Home – Phrases – Login (if a user) or Register (if not a user).
 - On the Home page, the user is presented with the options of going to the Phrases, Login or Register pages through three call to action buttons (as detailed below); 
     1. "Go To Phrases": From Home – Phrases
     2. "Go To Login": From Home - Login
@@ -64,14 +64,14 @@ As a First Time Visitor, I want to quickly establish what information the websit
 - The Home page has a general synopsis of the purpose of the website and several striking images of Korean culture and scenery, and there is a prominent navigation bar for clicking to the Phrases, Login and Register pages. 
 
 As a First Time Visitor, I want to be able to easily navigate throughout the site pages and be able to find and search for Korean phrases for use when I visit the country:
-- The Home page has three prominent call to action buttons in the middle of the page which leads to the Phrases, Login and Register pages. The Phrases page lists the main reference information, while the register page enables the user to create an account from which they can add their own phrases.  
+- The Home page has three prominent call to action buttons in the middle of the page which leads to the Phrases, Login and Register pages. The Phrases page lists the main reference information, while the Register page enables the user to create an account from which they can add their own phrases.  
 
-As a First Time Visitor, I want to be able to go to the register page and create my own account:
-- The call to action button on the Home page brings the visitor to the register page which contains a form, which when filled out results in a new account being created for the user, and they are directed to their Profile page.
+As a First Time Visitor, I want to be able to go to the Register page and create my own account:
+- The call to action button on the Home page brings the visitor to the Register page which contains a form, which when filled out results in a new account being created for the user, and they are directed to their Profile page.
 
 #### Returning Visitor Goals
  As a Returning Visitor, I want to be able to login, see phrases that have been added by other users and have the option to add my own phrases:
-- When a user logs in to their account, they are directed to their profile page, which has two call to action buttons to either go to the Phrases page (where they can see all of the phrases added by users) or to add a New Phrase. 
+- When a user logs in to their account, they are directed to their Profile page, which has two call to action buttons to either go to the Phrases page (where they can see all of the phrases added by users) or to add a New Phrase. 
 
 As a Returning Visitor, I want to be able to easily access the key information in respect of contacting the site owners (info contained in footer) if I have any queries in respect of the website itself:
 - The footer to each of the html pages lists the site's address in Dublin, their opening hours and phone/email address, so that any subsequent queries can be addressed to the site owners.
@@ -131,7 +131,7 @@ This is a complete account of the testing process for the site from start to fin
 3.  Phrases:
     - Confirm that the phrases are listed correctly below the search box.
     - When not logged in, confirm that no phrases added by registered users can be either edited or deleted.
-    - When logged in, confirm that edit and delete buttons work as expected.
+    - When logged in, confirm that edit and delete buttons work as expected (in respect of phrases that I added as a user).
     - Reduce and expand the width of the window to verify that the phrases section responds as expected, and that it reacts appropriately on all device widths.
 
 5.  Footer:
@@ -248,7 +248,7 @@ This is a complete account of the testing process for the site from start to fin
 #### Additional HTML Pages
 
 - Logout: Confirm that clicking the Logout link works and that when clicked the user is returned to the Login page and sees confirmation flash message.
-- Error Pages: Confirm that 404 and 500 error html pages are correctly set up (html has been validated). When user reaches the 404 and 500 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached.
+- Error Pages: Confirm that 404 and 500 error html pages are correctly written (html has been validated). When user reaches the 404 and 500 page they see the heading "Something went wrong" and can click the Return to Home Page button as an option. Confirm that images below "Something went wrong" text are responsive and that alt tags are attached. I tested the 404 page byb entering incorrect page link and confirmed that it is working correctly.
 - Review all functionality and responsiveness on my mobile phone and tablet for the 404 page and confirm that everything on this page is correct.  
 
 ## Further Testing
