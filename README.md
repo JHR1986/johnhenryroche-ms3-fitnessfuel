@@ -243,111 +243,101 @@ def delete_phrase(phrase_id):
 
 ## Deployment
 ### Database Deployment
-### Application Hosting
 ### Heroku
 
-This website is hosted using Heroku, a cloud platform as a service which supports several programming languages, and is deployed directly from the master branch of GitHub. The deployed site On Heroku updates automatically as new commits are pushed.
+This website is hosted using Heroku, a cloud platform which supports several programming languages, and is deployed directly from the master branch of GitHub. The deployed site on Heroku updates automatically as new commits are pushed to the Github repository.
 
 Creating a Heroku app:
-- From the Heroku dashboard select "New" and then select "Create new app"
+- From the Heroku dashboard select "New" and then select "Create new app".
 
-- Add the required new app details to the form:
-  - Add an app name (this name must be unique)
-  - Select your region (which for Irish users would be Europe)
-  - Click "Create App"
+- Add the required new app details to the form entries:
+  - Add an app name (this name must be unique in order to be valid).
+  - Select the region your app will be hosted from (which for Irish users would be Europe).
+  - Click the "Create App" button.
 
 Setting Environmental Variables:
-- From the Heroku dashboard:
-  - Select your newly created app from the list
+- From the Heroku dashboard, select your newly created app from the list on the page.
 - Select "Settings" from the top menu:
-  - Under 'Config Vars', select "Reveal Config Vars"
-  - Add your environment variables in key-value pairs, and then click "Add" to add additional pairings.
+  - Under 'Config Vars', select "Reveal Config Vars".
+  - Add your environment variables in key-value pairs, and then click "Add" to add any additional pairings.
 
 Deployment:
-- Create the following required deployment files in the repository:
-  - requirements.txt: This file lists the required python modules for Heroku to install. In order to create this file, type: pip freeze > requirements.txt in your IDE terminal.
+- Create the following required deployment files in your repository:
+  - requirements.txt: This file lists the required python modules to be installed. In order to create this file, type: pip freeze > requirements.txt in your IDE terminal.
   - Procfile: This file tells Heroku the command to launch the app. In order to create this file, type: python app.py > Procfile in your IDE terminal. 
-  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignore. To create this file, type: touch .gitignore in your IDE terminal type. This lists the files and directories to be excluded from live deployment, within the .gitignore file. Save this file to your repository root directory.
+  - .gitignore (this file is optional): This tells git which files (or patterns) it should ignore. To create this file, type: touch .gitignore in your IDE terminal type. Gitignore lists the files and directories to be excluded from live deployment. Save this file to your repository root directory.
 
 From the application top menu:
   - Select 'Deploy'
-  - Choose your Deployment method:
-    - Github: Select the correct Github account. Type in the repository name that you wish to deploy. Choose the correct repository from search results and then select "Connect".
-    - Manual Deployment: Choose the correct branch you wish to deploy from the drop-down. Select "Deploy Branch" and Heroku will then return "Your App has successfully deployed". 
+  - Choose your Deployment method as listed below:
+    - Github: Select the correct Github account and type in the repository name that you wish to deploy, and then select "Connect".
+    - Manual Deployment: Choose the correct branch you wish to deploy from the drop-down list. Select "Deploy Branch" and Heroku will then confirm that "Your App has successfully deployed". 
 
 Automatic Deployment
   - From the application top menu, select 'Deploy' and ensure that the app is connected to the correct repository. Under the 'Automatic Deployment' section, select 'Enable Automatic Deployment". 
 
 ### GitHub and GitPod Repository Management
 
-### How to clone 'Handy Korean Phrases' in GitHub, GitPod and setup on Heroku.
+### How to clone 'Handy Korean Phrases' in GitHub and setup on Heroku.
 
-To run a version of the site locally, you can clone this repository using the following steps;
+To run a version of the Handy Korean Phrases website locally, you can clone this repository by using the following steps;
 
-In a code editor of your choice;
+Login to a code editor of your choice and then complete the following commands;
 
-1. Go to GitHub.com
-2. Click on 'Repositories'
-3. Click on 'Handy Korean Phrases'
-4. Click on the 'Code' button.
-5. Under 'HTTPS' click the clipboard icon to the right of the URL.
-6. In your IDE of choice, open a repository or create a new repository.
-7. Open Terminal ('Terminal' then 'New Terminal' from the top ribbon menu in GitPod.)
-8. Type 'git clone', paste the URL link and press enter.
-
-Additional information around these cloning steps can be found on GitHub Pages Help Page.  
+1. Login to your GitHub account, click on 'Your Repositories' and then click on the 'Handy Korean Phrases' repository.
+2. Click on the 'Code' dropdown button (beside the green Gitpod button).
+3. Under the 'HTTPS' heading, click the clipboard icon to the right of the repository URL.
+4. In the code editor that you are using, open an existing repository or create a new repository.
+5. Open a new Terminal and type 'git clone', paste the URL link and press enter.  
 
 ### Installing Requirements
 
-- Install all requirements modules to your local IDE with the following CL:
+- Install all requirements modules to your IDE of choice with the following command:
 
 `pip3 install -r requirements.txt`
 
 ### Create Collections in MongoDB
 
-- Login to your MongoDB account
-- Create a Cluster and then create a database using the information contained in the Database Design section of this Readme file.
+- Login to your MongoDB account.
+- Create a Cluster and then create a Database using the information contained in the Database Design section of this Readme file. The Database that I created for this project is called task_manager and there are three collections titled "Categories", "Phrases" and "Users", and I also created an Index relating to the search function for English and Korean phrases in the phrases page.
 
 ### Setup Environmental Variables
 
-- Create a '.gitignore' file in the root directoy.
-- Add 'env.py' and 'pycache/' to the file list within the gitignore file. 
-- Create an 'env.py' file and in the 'env.py' file write the following code lines;
+- Create a '.gitignore' file in the root directoy, and then add 'env.py' and 'pycache/' to the file list within the gitignore file, so that they are not committed to Github. 
+- When these steps are done and the 'env.py' file has been created, write the following code lines within the 'env.py' file;
 
 ```
 import os
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", "[UNIQUE ID]")
-os.environ.setdefault("MONGO_URI", "[UNIQUE ID]") 
-os.environ.setdefault("MONGO_DBNAME", "[UNIQUE ID]")
+os.environ.setdefault("SECRET_KEY", "[Insert UNIQUE ID]")
+os.environ.setdefault("MONGO_URI", "[Insert UNIQUE ID]") 
+os.environ.setdefault("MONGO_DBNAME", "[Insert UNIQUE ID]")
 ```
 
-Note: For each section noted as [UNIQUE ID], you will need to provide your own unique identifier. These must also be aligned to Heroku environmental variables.
+Note: For each section listed above as [insert UNIQUE ID], you will need to provide your own unique identifier which must also be aligned to Heroku environmental variables.
 
 ### Setup Unique Identifies / Environment Variables
 
 #### SECRET_KEY
-This is required when using flash() and session() functions in flask. The key can be whatever you want, but it is generally advisable to use a randomly generated secure key.
+A Secret Key is required when using flash() and session() functions in flask. The key can be whatever the uses wishes, but it is good practice to create a randomly generated secure key for security purposes in order that it cannot be accessed by other users.
 
 #### MONGO_URI
-The Mongo URI is used to connect your application to your MongoDB cluster.
+The Mongo URI is important as it is used to connect your Heroku application to your MongoDB cluster. The steps for how to implement the Mongo URI feature are detailed below;
 
-- Click the 'Overview' tab from your Cluster, followed by 'Connect'.
-- Select 'Connect your application'.
-- Select your correct version of Python and copy the connection string.
-- Replace the 'username' and 'password' text, with the relevant criteria you setup in 'Database Access'.
+- When you are in the correct Cluster, Click the 'Overview' tab followed by the 'Connect' button on the right hand side, and then select 'Connect your application'.
+- Select your correct version of Python and copy the connection string, and then replace the 'username' and 'password' text with the relevant information you setup in the database section.
 
-#### MONGO_DBNAME
-This is the name of your database in MongoDB. This can be foung under the 'Collections' tab, which is located under your cluster.
+#### MONGO_DBNAME (the MongoDB database name)
+This is the name of your database in MongoDB. For my project, I used the database name "task_manager". The name of your database is located in the 'Collections' tab.
 
-#### Running Development Server
+#### Running the Development Server
 
-To launch a Http server using the development mode code for the application, use the following command in your IDE:
+To launch the server, use the following command in your code editor:
 
 `python3 app.py http.server`
 
-The IDE will then open a port for you to access the site.
+The code editor will then open a port for you to access your site.
 
 ## Credits
 ### Code
