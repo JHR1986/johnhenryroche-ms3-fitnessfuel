@@ -160,7 +160,7 @@ def profile(username):
 ```
 6. Adding new phrase to database:
 ```
-# App route for Add Phrase page
+# App route for add phrase page
 @app.route("/add_phrase", methods=["GET", "POST"])
 def add_phrase():
     if request.method == "POST":
@@ -227,7 +227,7 @@ def delete_phrase(phrase_id):
 7. [Jinja](https://jinja.palletsprojects.com/en/3.0.x/): Jinja was utilised to simplify displaying data from the backend of this project smoothly and effectively.
 8. [Flask](https://flask.palletsprojects.com/en/2.0.x/): Flask was utilised to construct and render pages for the project.
 9. [Google Fonts](https://fonts.google.com/): Google fonts was utilised to import the 'PT Sans' font into the style.css file and this font is used on all pages throughout the website.
-10. [Font Awesome](https://fontawesome.com/): Font awesome was utilised in the phrases, login, register, add phrase and edit phrases pages, as well as in the footer, for aesthetic and UX purposes. I matched the icons with the activity or place that they most closely represented.
+10. [Font Awesome](https://fontawesome.com/): Font awesome was utilised in the Phrases, Login, Register, Add Phrase and Edit Phrases pages, as well as in the footer, for aesthetic and UX purposes. I matched the icons with the activity or place that they most closely represented.
 11. [Git](https://git-scm.com/): Git was used for version control throughout the project by utilizing the Gitpod terminal to Commit to git and Push to the GitHub repository.
 12. [GitHub](https://github.com/): GitHub was used to store the code for the project after being pushed from Gitpod.
 13. [FreeLogoDesign](https://www.freelogodesign.org/): FreeLogoDesign was used to create the Handy Korean Phrases logo.
@@ -342,7 +342,7 @@ The code editor will then open a port for you to access your site.
 ## Credits
 ### Code
 - [Change input field to green when correct number of characters entered](https://stackoverflow.com/questions/39540302/how-to-change-the-background-color-of-an-input-field-when-text-is-entered): I studied this post in order to fully understand how to change the input field green when a correct number of valid characters had been entered, to assist with the overall validation process for my form sections.
-- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and amended it for use in my project in respect of the form sections in the phrases, add phrase, edit phrase, login and register pages. 
+- [Validation system for form entries](https://mdbootstrap.com/docs/b4/jquery/forms/validation/): I studied this validation feature from mdbootstrap (including a JS file) and amended it for use in my project in respect of the form sections in the Phrases, Add Phrase, Edit Phrase, Login and Register pages. 
 - [Show active page when using Flask and Jinja](https://stackoverflow.com/questions/55895502/dynamically-setting-active-class-with-flask-and-jinja2): I wished to ensure that the page currently clicked on was underlined as active in the Navbar. To achieve this while using flask, I followed the instructions listed in this Stackoverflow post. 
 - I studied a comment by Ed Bradley (Ed B) on Code Institute's Slack channel in respect of how to correctly set up the 404 & 500 error pages for Python and Flask.
 - I used the Bootstrap Library throughout the project to make the site more responsive through using the Bootstrap Grid System and employing Bootstrap elements for the Navbar, Footer, Jumbotron, Cards and Forms.
