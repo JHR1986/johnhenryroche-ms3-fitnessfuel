@@ -83,7 +83,7 @@ Photo of Site Represented on Various Media to highlight responsive design:
 
 ## Features
 - The website is responsive on all device sizes (and has been tested through Chrome Dev Tools on various devices including iPhone 6, iPhone X, Galaxy S5, iPad and Desktop).
-- The website has several interactive elements, including three Bootstrap buttons on the Home page which can be clicked to navigate to the Phrases, Login and Register Pages, while there are further call to action buttons in the add phrase, edit phrase, profile, login, register pages and error pages. 
+- The website has several interactive elements, including three Bootstrap buttons on the home page which can be clicked to navigate to the phrases, login and register pages, while there are further call to action buttons in the add phrase, edit phrase, profile, login, register pages and error pages. 
 - Each page in the website features a responsive Bootstrap navigation bar with the site logo featured to the left and the four page links to the right (with the active page highlighted), and these pages also each contain a 3 column Bootstrap footer with a copyright message, address and contact information (email and phone). The pages contain the following features on various pages:
     - Home Page: A main Jumbotron introductory section, three images relating to links to the phrases, login and register pages, and two images of Korean culture and architecture. 
     - Phrases Page: A main search box at the top of the page with two buttons (reset and search), and the list of phrases below them. When logged in, the user has access to edit and delete buttons in respect of phrases which they have added.
