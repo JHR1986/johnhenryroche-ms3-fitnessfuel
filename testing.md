@@ -254,12 +254,12 @@ This is a complete account of the testing process for the site from start to fin
 
 ### Further Testing Details
 
-- The website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers, and was found to operate satisfactorily on all of these.
-- I also tested the website in Google Lighthouse, which returned the following scores; (i) Performance: 98, (ii) Accessibility: 100, (iii) Best Practices: 100 & (iv) SEO: 100. The result image is detailed below;
+- Compatibility: The website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers, and was found to operate satisfactorily on all of these.
+- Performance: I also tested the website in Google Lighthouse, which returned the following scores; (i) Performance: 98, (ii) Accessibility: 100, (iii) Best Practices: 100 & (iv) SEO: 100. The result image is detailed below;
 
 ![lighthouse](https://user-images.githubusercontent.com/71781554/121774293-c74b1500-cb79-11eb-8b27-f6a1590f5923.png)
 
-- The website was viewed on a variety of devices such as Desktop, iPad, iPhone 6 & iPhone X. All formats were in order with no sections out of line or overlapping.
+- Responsiveness: The website was viewed on a variety of devices such as Desktop, iPad, iPhone 6 & iPhone X. All formats were in order with no sections out of line or overlapping.
 
 - I completed a large amount of detailed testing to ensure that all links were working correctly and that external links opened (as detailed in Manual Testing section above), and was happy that there were no broken links. This involved going into every page of the site and clicking every link/button that is available to a user (as part of their journey through the site) to ensure that everything was fully functional. 
 
