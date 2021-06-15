@@ -24,7 +24,7 @@
   * [Known Bugs](#known-bugs)
 
 ## Testing
-- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project (10 html pages and 1 css page) in order to ensure that there were no syntax errors in the project (e.g. the code was fully accurate and correctly structured throughout).
+- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project (10 html pages and 1 css page) in order to ensure that there were no syntax errors in the project (e.g. the code was fully accurate and correctly structured throughout). I used the source code of the website pages in order that the jinja code would be correctly rendered for the validator.
 The results confirmation that I received for the 10 HTML pages and 1 CSS page are shown below;
 
 ![htmlvalidation](https://user-images.githubusercontent.com/71781554/121773988-789c7b80-cb77-11eb-86f4-d2e8e6a71d9e.png)
