@@ -45,13 +45,18 @@
 {% if phrases|length > 0 %}
 <div class="card phrasebackground">
     {% for phrase in phrases %}
-    <div class="card-body phrases pt-2 pb-2">
-        <h5 class="card-title"><i class="fa fa-list-alt" aria-hidden="true"></i> Category: {{ phrase.category_name }}
+    <div class="card-body phrases pt-2 pb-2 mt-2 mb-2">
+        <h5 class="phrases-icon pt-1 pb-1"><img src="static/images/category.png" alt="Category Symbol"> Category:
+            {{ phrase.category_name }}
         </h5>
-        <h6><i class="far fa-comment-dots"></i> English Phrase: {{ phrase.english_name }}</h6>
-        <h6 class="korean-text"><i class="far fa-comment-dots"></i> Korean Phrase: {{ phrase.korean_name }}</h6>
-        <p class="card-text"><i class="fas fa-clipboard-list"></i> Fun Fact: {{ phrase.brief_description }}</p>
-        <h6>by: {{ phrase.created_by }}</h6>
+        <h6 class="phrases-icon"><img src="static/images/ukflag.png" alt="UK flag"> English Phrase:
+            {{ phrase.english_name }}</h6>
+        <h6 class="korean-text"><img src="static/images/southkoreanflag.png" alt="Korean flag"> Korean Phrase:
+            {{ phrase.korean_name }}</h6>
+        <p class="phrases-icon"><img src="static/images/informationicon.png" alt="Information Symbol"> Fun Fact:
+            {{ phrase.brief_description }}</p>
+        <h6 class="phrases-icon"><img src="static/images/userphoto.png" alt="User Symbol"> by: {{ phrase.created_by }}
+        </h6>
         {% if session.user|lower == phrase.created_by|lower %}
         <a class="btn btn-primary button-red" href="{{ url_for('delete_phrase', phrase_id=phrase._id) }}"
             role="button">Delete</a>
