@@ -347,6 +347,7 @@ In order to deploy the Handy Korean Phrases website to Heroku (which is a cloud 
     - [Image of Iphone Home Page - Rahul Chakraborty](https://unsplash.com/photos/xsGxhtAsfSA)
     - [Image of Cityscape Register Page - Farrel Nobel](https://unsplash.com/photos/vw_XqUC1ORQ)
 
+- The icon images used for the headings (Categories, English Phrase, Korean Phrase & Fun Fact) in the Phrases page were sourced from Flaticon, an image database website with free icons available in PNG, SVG, EPS, PSD and BASE 64 formats.
 - The logo for Handy Korean Phrases was created using a template which I made on a design website called FreeLogoDesign, and which I amended in respect of colour scheme and design to match the proposed styling of my site. FreeLogoDeisgn is a website which allows people to make brand logos for free and download them to their own media. I also enhanced the logo using a website called Lets Enhance. 
 
 ### Acknowledgements
